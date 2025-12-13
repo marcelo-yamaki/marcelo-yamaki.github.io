@@ -267,10 +267,6 @@ margin-bottom: 25px;
         }
 
         .timeline-item {
-background: #FFD700; /* Linha dourada */
-        }
-
-        .timeline-item {
             position: relative;
             margin-bottom: 25px;
             padding-left: 30px;
@@ -299,8 +295,7 @@ background: #FFD700; /* Linha dourada */
         .timeline-item h4 {
             font-size: 1.1rem;
             margin-bottom: 5px;
-            color: #FFD700;
-
+            color: #333;
         }
 
         .timeline-item p {
@@ -733,6 +728,7 @@ color: #666;
             }
 
         }
+
 
 
 
