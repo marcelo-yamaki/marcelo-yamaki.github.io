@@ -217,7 +217,7 @@ margin: 0 auto 50px auto;
             margin-top: 30px;
         }
 
-        .academic-timeline, .specializations, .competency-card, .interpersonal-skills { 
+        .specializations, .competency-card, .interpersonal-skills { 
             background-color: #f9f9f9;
             padding: 30px;
             border-radius: 8px;
@@ -226,7 +226,7 @@ margin: 0 auto 50px auto;
             flex-direction: column;
         }
 
-        .academic-timeline h3, .specializations h3, .competency-card h3, .interpersonal-skills h3 {
+        .specializations h3, .competency-card h3, .interpersonal-skills h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             color: #002D62;
@@ -728,6 +728,7 @@ color: #666;
             }
 
         }
+
 
 
 
