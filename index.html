@@ -1,206 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Minha Página Pessoal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelo Daisuke Yamaki | Professor, Engenheiro e Consultor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Para ícones, você pode usar Font Awesome. Exemplo de como incluir: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuSlMKnfSMZhYDRBQz8hld/oW6+BLjM9+uF3F/x3M4n9JmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset básico e estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- ====== ESTILO GLOBAL ====== -->
-  <style>
-    :root{
-      --primary:#1f77ff;
-      --dark:#0d1117;
-      --light:#ffffff;
-      --gray:#8b949e;
-      --spacing:clamp(1rem,2vw,2rem);
-    }
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-    html{scroll-behavior:smooth;}
-    body{color:var(--light);background:var(--dark);line-height:1.6;}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    /* ---------- HEADER & NAV ---------- */
-    header{
-      position:sticky;top:0;z-index:100;
-      backdrop-filter:blur(8px);
-      background:rgba(13,17,23,0.75);
-      border-bottom:1px solid rgba(255,255,255,0.05);
-    }
-    nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--spacing);}
-    nav h1{font-size:1.5rem;font-weight:700;color:var(--primary);}
-    .nav-links{
-      display:flex;gap:1.5rem;list-style:none;
-    }
-    .nav-links a{
-      color:var(--light);text-decoration:none;font-weight:500;position:relative;
-    }
-    .nav-links a::after{
-      content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--primary);transition:width .3s ease;
-    }
-    .nav-links a:hover::after{width:100%;}
-    /* Mobile menu */
-    .burger{display:none;font-size:1.7rem;cursor:pointer;color:var(--light);}
+        /* Barra de Navegação */
+        .navbar {
+            background-color: #002D62; /* Azul escuro */
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* ---------- HERO ---------- */
-    .hero{
-      min-height:80vh;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      text-align:center;padding:0 var(--spacing);
-      background:linear-gradient(135deg,#1f77ff 0%,#7928ff 100%);
-    }
-    .hero h2{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;}
-    .hero p{font-size:clamp(1rem,2.5vw,1.25rem);max-width:600px;margin-bottom:2rem;}
-    .btn{
-      display:inline-block;padding:.75rem 2rem;border-radius:30px;
-      background:var(--light);color:var(--dark);font-weight:600;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
 
-    /* ---------- SEÇÕES GENÉRICAS ---------- */
-    section{padding:4rem var(--spacing);}
-    section h3{font-size:2rem;margin-bottom:1.5rem;color:var(--primary);}
-    .container{max-width:1100px;margin:auto;}
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
 
-    /* ---------- SOBRE ---------- */
-    .sobre p{color:var(--gray);max-width:800px;}
+        .navbar ul li a:hover {
+            color: #FFD700; /* Dourado */
+        }
 
-    /* ---------- PROJETOS ---------- */
-    .cards{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-    .card{
-      background:#161b22;border:1px solid rgba(255,255,255,0.05);border-radius:8px;
-      padding:1.5rem;transition:transform .25s ease, border .25s ease;
-    }
-    .card:hover{transform:translateY(-6px);border-color:var(--primary);}
-    .card h4{margin-bottom:.75rem;color:var(--light);}
-    .card p{color:var(--gray);font-size:.9rem;}
+        /* Seção Herói (Home) */
+        .hero-section {
+            position: relative;
+            height: 100vh; /* Ajuste conforme necessário */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; /* Garante que a imagem de fundo não ultrapasse */
+        }
 
-    /* ---------- HABILIDADES ---------- */
-    .skills-list{display:flex;flex-wrap:wrap;gap:.75rem;}
-    .skill{
-      background:var(--primary);padding:.4rem .8rem;border-radius:20px;
-      font-size:.9rem;font-weight:600;color:var(--light);
-      transition:transform .25s ease;
-    }
-    .skill:hover{transform:scale(1.05);}
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1920x1080/002D62/FFFFFF?text=Sua+Foto+Profissional+Aqui') no-repeat center center/cover; /* Placeholder para sua foto */
+            filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
+            z-index: 1;
+        }
 
-    /* ---------- CONTATO ---------- */
-    .contact a{color:var(--primary);text-decoration:none;font-weight:600;}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+            border-radius: 10px;
+        }
 
-    /* ---------- RODAPÉ ---------- */
-    footer{padding:2rem var(--spacing);text-align:center;color:var(--gray);font-size:.85rem;}
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
 
-    /* ---------- MEDIA QUERIES ---------- */
-    @media (max-width:768px){
-      .nav-links{position:fixed;inset:0 0 0 40%;flex-direction:column;padding-top:5rem;
-                 background:rgba(13,17,23,.95);transform:translateX(100%);transition:transform .4s ease;}
-      .nav-links.show{transform:translateX(0);}
-      .burger{display:block;}
+        .hero-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #FFD700; /* Dourado */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
 
-      .hero{min-height:70vh;}
-    }
-  </style>
+        .hero-content .intro-paragraph {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons .btn {
+            background-color: #FFD700; /* Dourado */
+            color: #002D62; /* Azul escuro */
+            padding: 0.9rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-buttons .btn:hover {
+            background-color: #e6c200; /* Dourado mais escuro */
+            transform: translateY(-3px);
+        }
+
+        .visual-highlights {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        .visual-highlights span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        /* Para telas menores */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero-content .intro-paragraph {
+                font-size: 0.95rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .visual-highlights {
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header>
-    <nav class="container">
-      <h1>SeuNome</h1>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <!-- Menu Desktop -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1>Marcelo Daisuke Yamaki</h1>
+                <h2>Professor, Engenheiro e Consultor | Inovação e Impacto Multidisciplinar</h2>
+                <p class="intro-paragraph">
+                    Professor versátil com ampla experiência em engenharia e TI, especializado em integrar disciplinas em contextos
+                    interdisciplinares, promover competências alinhadas às demandas da indústria e aplicar tecnologias emergentes e
+                    metodologias inovadoras no ensino e desenvolvimento de projetos.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn">Explore Meu Perfil <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://www.linkedin.com/in/marcelodaisukeyamaki/" target="_blank" rel="noopener noreferrer" class="btn">
+                        <i class="fab fa-linkedin"></i> Conecte-se no LinkedIn
+                    </a>
+                </div>
+                <div class="visual-highlights">
+                    <span><i class="fas fa-chalkboard-teacher"></i> Ensino</span>
+                    <span><i class="fas fa-cogs"></i> Engenharia</span>
+                    <span><i class="fas fa-handshake"></i> Consultoria</span>
+                </div>
+            </div>
+        </section>
 
-      <!-- Ícone Mobile -->
-      <span class="burger" id="burger">&#9776;</span>
-    </nav>
-  </header>
+        <!-- Você pode adicionar mais seções aqui (Sobre Mim, Experiência, etc.) -->
+        <section id="about" style="padding: 50px 20px; text-align: center; background-color: white;">
+            <h2>Sobre Mim</h2>
+            <p>Detalhes adicionais sobre Marcelo Daisuke Yamaki...</p>
+        </section>
+        <section id="experience" style="padding: 50px 20px; text-align: center; background-color: #f4f4f4;">
+            <h2>Experiência</h2>
+            <p>Seção para listar experiências profissionais e acadêmicas...</p>
+        </section>
+        <section id="portfolio" style="padding: 50px 20px; text-align: center; background-color: white;">
+            <h2>Portfólio</h2>
+            <p>Exemplos de projetos e publicações...</p>
+        </section>
+        <section id="contact" style="padding: 50px 20px; text-align: center; background-color: #f4f4f4;">
+            <h2>Contato</h2>
+            <p>Informações de contato e formulário...</p>
+        </section>
+    </main>
 
-  <!-- ====== HERO / INÍCIO ====== -->
-  <section class="hero" id="home">
-    <h2>Olá, eu sou <strong>Seu Nome</strong></h2>
-    <p>Profissional multidisciplinar apaixonado por desenvolvimento, design e inovação.</p>
-    <a href="#projetos" class="btn">Ver Projetos</a>
-  </section>
+    <footer>
+        <p style="text-align: center; padding: 20px; background-color: #002D62; color: white;">&copy; 2025 Marcelo Daisuke Yamaki. Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- ====== SOBRE ====== -->
-  <section id="sobre">
-    <div class="container sobre">
-      <h3>Sobre Mim</h3>
-      <p>
-        Escreva um breve resumo da sua trajetória, destacando experiências, valores e motivações.
-        Mantenha o texto conciso e pessoal, convidando o visitante a explorar o restante da página.
-      </p>
-    </div>
-  </section>
-
-  <!-- ====== PROJETOS ====== -->
-  <section id="projetos">
-    <div class="container">
-      <h3>Projetos em Destaque</h3>
-
-      <div class="cards">
-        <div class="card">
-          <h4>Projeto&nbsp;1</h4>
-          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
-        </div>
-        <div class="card">
-          <h4>Projeto&nbsp;2</h4>
-          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
-        </div>
-        <div class="card">
-          <h4>Projeto&nbsp;3</h4>
-          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== HABILIDADES ====== -->
-  <section id="habilidades">
-    <div class="container">
-      <h3>Habilidades</h3>
-
-      <div class="skills-list">
-        <span class="skill">HTML&nbsp;/&nbsp;CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">React</span>
-        <span class="skill">UI/UX Design</span>
-        <span class="skill">Python</span>
-        <span class="skill">Git&nbsp;&amp;&nbsp;GitHub</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CONTATO ====== -->
-  <section id="contato">
-    <div class="container contact">
-      <h3>Entre em Contato</h3>
-      <p>Quer conversar sobre oportunidades ou colaborações? Envie um e-mail para
-         <a href="mailto:voce@email.com">voce@email.com</a>
-         ou conecte-se comigo no <a href="https://www.linkedin.com/" >LinkedIn</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ====== RODAPÉ ====== -->
-  <footer>
-    © <span id="year"></span> SeuNome • Feito com ?? e GitHub Pages
-  </footer>
-
-  <!-- ====== JS (menu mobile + ano dinâmico) ====== -->
-  <script>
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', ()=>navLinks.classList.toggle('show'));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
-
 </html>
