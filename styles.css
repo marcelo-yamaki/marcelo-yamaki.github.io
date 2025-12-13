@@ -217,7 +217,7 @@ margin: 0 auto 50px auto;
             margin-top: 30px;
         }
 
-        .academic-timeline, .specializations, .competency-card { /* Adicionado competency-card aqui */
+        .academic-timeline, .specializations, .competency-card, .interpersonal-skills { 
             background-color: #f9f9f9;
             padding: 30px;
             border-radius: 8px;
@@ -226,7 +226,7 @@ margin: 0 auto 50px auto;
             flex-direction: column;
         }
 
-        .academic-timeline h3, .specializations h3, .competency-card h3 {
+        .academic-timeline h3, .specializations h3, .competency-card h3, .interpersonal-skills h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             color: #002D62;
@@ -376,29 +376,6 @@ transform: translateY(-3px);
         }
 background-color: #e6c200;
             transform: translateY(-2px);
-        }
-
-        /* Habilidades Interpessoais */
-        .interpersonal-skills {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 20px;
-        }
-        .interpersonal-skills li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #555;
-            text-align: left;
-        }
-
-        .interpersonal-skills li i {
-            position: absolute;
-            left: 0;
-            top: 3px;
-            color: #002D62; /* Azul escuro para ícones de lista */
-            font-size: 1.1rem;
         }
 
         /* Idiomas compactados */
@@ -761,3 +738,4 @@ color: #666;
             }
 
         }
+
