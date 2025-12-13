@@ -1,14 +1,9 @@
-/* styles.css */
         /* Reset básico e estilos globais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-}
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -46,9 +41,6 @@
             font-size: 1rem;
             transition: color 0.3s ease;
         }
-font-size: 1rem;
-            transition: color 0.3s ease;
-        }
 
         .navbar ul li a:hover {
             color: #FFD700; /* Dourado */
@@ -72,13 +64,9 @@ font-size: 1rem;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('selfie_t.jpg') no-repeat center center/cover;
+            background: url('selfie_t.jpg') no-repeat center center/cover; 
             filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
             z-index: 1;
-        }
-
-        .hero-content {
-z-index: 1;
         }
 
         .hero-content {
@@ -111,11 +99,8 @@ z-index: 1;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.8;
-            text-align: justify;
+            text-align: justify; 
         }
 
         .cta-buttons {
@@ -139,10 +124,6 @@ max-width: 600px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .cta-buttons .btn:hover {
-gap: 0.5rem;
         }
 
         .cta-buttons .btn:hover {
@@ -170,9 +151,6 @@ gap: 0.5rem;
             font-size: 1rem; /* Slightly smaller for multiple items */
             font-weight: 600;
         }
-        .visual-highlights ul li i {
-            color: #FFD700; /* Gold icon color */
-}
         .visual-highlights ul li i {
             color: #FFD700; /* Gold icon color */
             font-size: 1.2em; /* Slightly larger icon */
@@ -205,8 +183,6 @@ gap: 0.5rem;
             max-width: 850px; /* Aumentado ligeiramente */
             margin: 0 auto 50px auto;
             color: #555;
-margin: 0 auto 50px auto;
-            color: #555;
             padding: 0 20px; /* Mantém padding interno */
         }
 
@@ -217,7 +193,7 @@ margin: 0 auto 50px auto;
             margin-top: 30px;
         }
 
-        .specializations, .competency-card, .interpersonal-skills { 
+        .academic-timeline, .specializations, .competency-card { /* Adicionado competency-card aqui */
             background-color: #f9f9f9;
             padding: 30px;
             border-radius: 8px;
@@ -226,17 +202,14 @@ margin: 0 auto 50px auto;
             flex-direction: column;
         }
 
-        .specializations h3, .competency-card h3, .interpersonal-skills h3 {
+        .academic-timeline h3, .specializations h3, .competency-card h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             color: #002D62;
             margin-bottom: 25px;
             text-align: center;
         }
-margin-bottom: 25px;
-            text-align: center;
-        }
-
+        
         .competency-card h4 { /* Estilo para os sub-títulos dentro do card de competências */
             font-size: 1.3rem;
             color: #002D62;
@@ -330,9 +303,6 @@ margin-bottom: 25px;
             transform: translateY(-3px);
             background-color: #d1e7fa;
         }
-transform: translateY(-3px);
-            background-color: #d1e7fa;
-        }
 
         .specialization-card i {
             color: #FFD700; /* Dourado */
@@ -364,8 +334,28 @@ transform: translateY(-3px);
             background-color: #e6c200;
             transform: translateY(-2px);
         }
-background-color: #e6c200;
-            transform: translateY(-2px);
+
+        /* Habilidades Interpessoais */
+        .interpersonal-skills {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        .interpersonal-skills li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+            text-align: left;
+        }
+
+        .interpersonal-skills li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #002D62; /* Azul escuro para ícones de lista */
+            font-size: 1.1rem;
         }
 
         /* Idiomas compactados */
@@ -374,9 +364,6 @@ background-color: #e6c200;
             gap: 15px;
             flex-grow: 1; /* Permite que o cartão se expanda */
         }
-
-        .language-item-compact {
-}
 
         .language-item-compact {
             display: flex;
@@ -408,8 +395,6 @@ background-color: #e6c200;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 5px;
-justify-content: flex-end;
             padding-right: 5px;
             font-size: 0.75rem;
             color: #002D62;
@@ -443,9 +428,6 @@ justify-content: flex-end;
             background-color: white;
             padding: 25px;
             border-radius: 8px;
-background-color: white;
-            padding: 25px;
-            border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
@@ -474,9 +456,6 @@ background-color: white;
             font-size: 1.4rem;
             color: #002D62;
             font-weight: 700;
-            line-height: 1.3;
-            margin: 0;
-font-weight: 700;
             line-height: 1.3;
             margin: 0;
         }
@@ -512,15 +491,11 @@ font-weight: 700;
         }
 
         .experience-card .achievements li:last-child {
-color: #666;
-        }
-
-        .experience-card .achievements li:last-child {
             margin-bottom: 0;
         }
 
         .experience-card .achievements li:before {
-            content: '*';
+            content: '*'; 
             color: #FFD700; /* Dourado */
             font-weight: bold;
             display: inline-block;
@@ -546,10 +521,6 @@ color: #666;
             color: #002D62;
             margin-bottom: 40px;
         }
-
-        .portfolio-links {
-            display: flex;
-}
 
         .portfolio-links {
             display: flex;
@@ -579,10 +550,6 @@ color: #666;
             background-color: #001f44; /* Azul ainda mais escuro */
             transform: translateY(-3px);
         }
-
-        .portfolio-links a i {
-            color: #FFD700; /* Ícone dourado */
-}
 
         .portfolio-links a i {
             color: #FFD700; /* Ícone dourado */
@@ -624,9 +591,6 @@ color: #666;
         /* Para telas menores */
         @media (max-width: 768px) {
             .navbar ul {
-/* Para telas menores */
-        @media (max-width: 768px) {
-            .navbar ul {
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
@@ -660,10 +624,6 @@ color: #666;
             .about-section {
                 padding: 40px 15px; /* Ajuste para telas menores */
             }
-
-            .about-section h2 {
-                font-size: 2rem;
-}
 
             .about-section h2 {
                 font-size: 2rem;
@@ -701,10 +661,6 @@ color: #666;
 
             .language-item-compact strong {
                 flex-basis: 60px;
-}
-
-            .language-item-compact strong {
-                flex-basis: 60px;
                 font-size: 0.85rem;
             }
             .language-item-compact .progress-bar-fill {
@@ -726,10 +682,4 @@ color: #666;
                 font-size: 1rem;
                 padding: 0.8rem 1rem;
             }
-
         }
-
-
-
-
-
