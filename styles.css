@@ -1,5 +1,5 @@
 /* styles.css */
-        /* Reset b·sico e estilos globais */
+        /* Reset b√°sico e estilos globais */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +20,7 @@
             min-height: 100vh;
         }
 
-        /* Barra de NavegaÁ„o */
+        /* Barra de Navega√ß√£o */
         .navbar {
             background-color: #002D62; /* Azul escuro */
             padding: 1rem 2rem;
@@ -54,16 +54,16 @@ font-size: 1rem;
             color: #FFD700; /* Dourado */
         }
 
-        /* SeÁ„o HerÛi (Home) */
+        /* Se√ß√£o Her√≥i (Home) */
         .hero-section {
             position: relative;
-            height: 100vh; /* Ajuste conforme necess·rio */
+            height: 100vh; /* Ajuste conforme necess√°rio */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            overflow: hidden; /* Garante que a imagem de fundo n„o ultrapasse */
+            overflow: hidden; /* Garante que a imagem de fundo n√£o ultrapasse */
         }
 
         .hero-background {
@@ -120,7 +120,7 @@ max-width: 600px;
 
         .cta-buttons {
             display: flex;
-            flex-wrap: wrap; /* Permite que os botıes quebrem linha em telas menores */
+            flex-wrap: wrap; /* Permite que os bot√µes quebrem linha em telas menores */
             justify-content: center;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
@@ -179,9 +179,9 @@ gap: 0.5rem;
         }
 
 
-        /* SeÁ„o Sobre Mim */
+        /* Se√ß√£o Sobre Mim */
         .about-section {
-            padding: 60px 20px; /* Margem diminuÌda */
+            padding: 60px 20px; /* Margem diminu√≠da */
             background-color: white;
             display: grid;
             grid-template-columns: 1fr;
@@ -207,7 +207,7 @@ gap: 0.5rem;
             color: #555;
 margin: 0 auto 50px auto;
             color: #555;
-            padding: 0 20px; /* MantÈm padding interno */
+            padding: 0 20px; /* Mant√©m padding interno */
         }
 
         .about-content-grid {
@@ -237,7 +237,7 @@ margin-bottom: 25px;
             text-align: center;
         }
 
-        .competency-card h4 { /* Estilo para os sub-tÌtulos dentro do card de competÍncias */
+        .competency-card h4 { /* Estilo para os sub-t√≠tulos dentro do card de compet√™ncias */
             font-size: 1.3rem;
             color: #002D62;
             margin-top: 25px;
@@ -247,13 +247,13 @@ margin-bottom: 25px;
             text-align: center;
         }
 
-        /* Timeline AcadÍmica */
+        /* Timeline Acad√™mica */
         .timeline {
             position: relative;
             margin: 0 0 0 20px;
             padding: 10px 0;
             list-style: none;
-            flex-grow: 1; /* Permite que o cart„o se expanda */
+            flex-grow: 1; /* Permite que o cart√£o se expanda */
         }
 
         .timeline:before {
@@ -286,7 +286,7 @@ background: #FFD700; /* Linha dourada */
             top: 0;
             width: 20px;
             height: 20px;
-            background: #002D62; /* CÌrculo azul escuro */
+            background: #002D62; /* C√≠rculo azul escuro */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -300,6 +300,7 @@ background: #FFD700; /* Linha dourada */
             font-size: 1.1rem;
             margin-bottom: 5px;
             color: #333;
+            background: #f4f4f4;
         }
 
         .timeline-item p {
@@ -312,13 +313,13 @@ background: #FFD700; /* Linha dourada */
             color: #666;
         }
 
-        /* EspecializaÁıes (Cards/Pills) */
+        /* Especializa√ß√µes (Cards/Pills) */
         .specialization-cards {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
-            flex-grow: 1; /* Permite que o cart„o se expanda */
+            flex-grow: 1; /* Permite que o cart√£o se expanda */
         }
 
         .specialization-card {
@@ -347,7 +348,7 @@ transform: translateY(-3px);
             color: #FFD700; /* Dourado */
         }
 
-        /* Tag Cloud de Habilidades TÈcnicas */
+        /* Tag Cloud de Habilidades T√©cnicas */
         .tag-cloud {
             display: flex;
             flex-wrap: wrap;
@@ -396,7 +397,7 @@ background-color: #e6c200;
             position: absolute;
             left: 0;
             top: 3px;
-            color: #002D62; /* Azul escuro para Ìcones de lista */
+            color: #002D62; /* Azul escuro para √≠cones de lista */
             font-size: 1.1rem;
         }
 
@@ -404,7 +405,7 @@ background-color: #e6c200;
         .language-skills-compact {
             display: grid;
             gap: 15px;
-            flex-grow: 1; /* Permite que o cart„o se expanda */
+            flex-grow: 1; /* Permite que o cart√£o se expanda */
         }
 
         .language-item-compact {
@@ -449,7 +450,7 @@ justify-content: flex-end;
         }
 
 
-        /* SeÁ„o ExperiÍncia Profissional */
+        /* Se√ß√£o Experi√™ncia Profissional */
         .experience-section {
             padding: 80px 20px;
             background-color: #f9f9f9; /* Fundo ligeiramente diferente para contrastar */
@@ -563,7 +564,7 @@ color: #666;
             top: 0;
         }
 
-        /* SeÁ„o PortfÛlio */
+        /* Se√ß√£o Portf√≥lio */
         .portfolio-section {
             padding: 80px 20px;
             background-color: white;
@@ -613,14 +614,14 @@ color: #666;
         }
 
         .portfolio-links a i {
-            color: #FFD700; /* Õcone dourado */
+            color: #FFD700; /* √çcone dourado */
 }
 
         .portfolio-links a i {
-            color: #FFD700; /* Õcone dourado */
+            color: #FFD700; /* √çcone dourado */
         }
 
-        /* SeÁ„o Contato */
+        /* Se√ß√£o Contato */
         .contact-section {
             padding: 50px 20px;
             text-align: center;
@@ -758,4 +759,5 @@ color: #666;
                 font-size: 1rem;
                 padding: 0.8rem 1rem;
             }
+
         }
