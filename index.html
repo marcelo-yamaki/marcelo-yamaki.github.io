@@ -1,3 +1,4 @@
+﻿<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,693 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <!-- Para ícones, você pode usar Font Awesome. Exemplo de como incluir: -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuSlMKnfSMZhYDRBQz8hld/oW6+BLjM9+uF3F/x3M4n9JmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Reset básico e estilos globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Barra de Navegação */
-        .navbar {
-            background-color: #002D62; /* Azul escuro */
-            padding: 1rem 2rem;
-            color: white;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .navbar ul li a:hover {
-            color: #FFD700; /* Dourado */
-        }
-
-        /* Seção Herói (Home) */
-        .hero-section {
-            position: relative;
-            height: 100vh; /* Ajuste conforme necessário */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden; /* Garante que a imagem de fundo não ultrapasse */
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('selfie_t.jpg') no-repeat center center/cover; 
-            filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
-            border-radius: 10px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #FFD700; /* Dourado */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-content .intro-paragraph {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-            text-align: justify; 
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-buttons .btn {
-            background-color: #FFD700; /* Dourado */
-            color: #002D62; /* Azul escuro */
-            padding: 0.9rem 1.8rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-buttons .btn:hover {
-            background-color: #e6c200; /* Dourado mais escuro */
-            transform: translateY(-3px);
-        }
-
-        .visual-highlights { /* Reutilizando a classe e adaptando */
-            margin-top: 1.5rem;
-            color: #ccc; /* Text color for the highlights */
-            padding: 1rem 0;
-        }
-        .visual-highlights ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem 2rem; /* Row-gap and column-gap */
-            padding: 0;
-        }
-        .visual-highlights ul li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem; /* Slightly smaller for multiple items */
-            font-weight: 600;
-        }
-        .visual-highlights ul li i {
-            color: #FFD700; /* Gold icon color */
-            font-size: 1.2em; /* Slightly larger icon */
-        }
-
-
-        /* Seção Sobre Mim */
-        .about-section {
-            padding: 60px 20px; /* Margem diminuída */
-            background-color: white;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .about-overview {
-            text-align: justify; /* Texto justificado */
-            line-height: 1.8;
-            font-size: 1.1rem;
-            max-width: 850px; /* Aumentado ligeiramente */
-            margin: 0 auto 50px auto;
-            color: #555;
-            padding: 0 20px; /* Mantém padding interno */
-        }
-
-        .about-content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .academic-timeline, .specializations, .competency-card { /* Adicionado competency-card aqui */
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            display: flex; /* Para flex-direction column abaixo */
-            flex-direction: column;
-        }
-
-        .academic-timeline h3, .specializations h3, .competency-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: #002D62;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .competency-card h4 { /* Estilo para os sub-títulos dentro do card de competências */
-            font-size: 1.3rem;
-            color: #002D62;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            text-align: center;
-        }
-
-        /* Timeline Acadêmica */
-        .timeline {
-            position: relative;
-            margin: 0 0 0 20px;
-            padding: 10px 0;
-            list-style: none;
-            flex-grow: 1; /* Permite que o cartão se expanda */
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: #FFD700; /* Linha dourada */
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 30px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item .icon {
-            position: absolute;
-            left: -10px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: #002D62; /* Círculo azul escuro */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            border: 2px solid #FFD700; /* Borda dourada */
-        }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .timeline-item p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* Especializações (Cards/Pills) */
-        .specialization-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            flex-grow: 1; /* Permite que o cartão se expanda */
-        }
-
-        .specialization-card {
-            background-color: #e3f2fd; /* Azul claro */
-            padding: 15px 20px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: #002D62;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .specialization-card:hover {
-            transform: translateY(-3px);
-            background-color: #d1e7fa;
-        }
-
-        .specialization-card i {
-            color: #FFD700; /* Dourado */
-        }
-
-        /* Tag Cloud de Habilidades Técnicas */
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .skill-tag {
-            background-color: #FFD700; /* Dourado */
-            color: #002D62; /* Azul escuro */
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background-color: #e6c200;
-            transform: translateY(-2px);
-        }
-
-        /* Habilidades Interpessoais */
-        .interpersonal-skills {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 20px;
-        }
-        .interpersonal-skills li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #555;
-            text-align: left;
-        }
-
-        .interpersonal-skills li i {
-            position: absolute;
-            left: 0;
-            top: 3px;
-            color: #002D62; /* Azul escuro para ícones de lista */
-            font-size: 1.1rem;
-        }
-
-        /* Idiomas compactados */
-        .language-skills-compact {
-            display: grid;
-            gap: 15px;
-            flex-grow: 1; /* Permite que o cartão se expanda */
-        }
-
-        .language-item-compact {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .language-item-compact strong {
-            flex-basis: 80px; /* Largura fixa para o nome do idioma */
-            text-align: right;
-            font-size: 0.95rem;
-            color: #333;
-        }
-
-        .language-item-compact .progress-bar-container {
-            flex-grow: 1;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            height: 15px;
-            overflow: hidden;
-        }
-
-        .language-item-compact .progress-bar-fill {
-            background-color: #FFD700; /* Dourado */
-            height: 100%;
-            border-radius: 5px;
-            width: 0; /* Preenchido via style inline */
-            transition: width 0.5s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 5px;
-            font-size: 0.75rem;
-            color: #002D62;
-            font-weight: bold;
-        }
-
-
-        /* Seção Experiência Profissional */
-        .experience-section {
-            padding: 80px 20px;
-            background-color: #f9f9f9; /* Fundo ligeiramente diferente para contrastar */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .experience-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .experience-card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .experience-card .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .experience-card .card-header .icon {
-            font-size: 2rem;
-            color: #FFD700; /* Dourado */
-            margin-right: 15px;
-        }
-
-        .experience-card .card-header h3 {
-            font-size: 1.4rem;
-            color: #002D62;
-            font-weight: 700;
-            line-height: 1.3;
-            margin: 0;
-        }
-
-        .experience-card .period {
-            font-size: 0.95rem;
-            color: #777;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .experience-card .description {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .experience-card .achievements {
-            list-style-type: none; /* Remove default bullet */
-            padding-left: 0;
-            margin-top: 15px;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        .experience-card .achievements li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .experience-card .achievements li:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-card .achievements li:before {
-            content: '*'; 
-            color: #FFD700; /* Dourado */
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        /* Seção Portfólio */
-        .portfolio-section {
-            padding: 80px 20px;
-            background-color: white;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            margin-bottom: 40px;
-        }
-
-        .portfolio-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .portfolio-links a {
-            background-color: #002D62; /* Azul escuro */
-            color: white;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .portfolio-links a:hover {
-            background-color: #001f44; /* Azul ainda mais escuro */
-            transform: translateY(-3px);
-        }
-
-        .portfolio-links a i {
-            color: #FFD700; /* Ícone dourado */
-        }
-
-        /* Seção Contato */
-        .contact-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #002D62;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #FFD700;
-        }
-
-
-        /* Para telas menores */
-        @media (max-width: 768px) {
-            .navbar ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.4rem;
-            }
-
-            .hero-content .intro-paragraph {
-                font-size: 0.95rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .visual-highlights ul {
-                gap: 1rem; /* Ajuste para telas menores */
-            }
-            .visual-highlights ul li {
-                font-size: 0.9rem;
-            }
-
-
-            .about-section {
-                padding: 40px 15px; /* Ajuste para telas menores */
-            }
-
-            .about-section h2 {
-                font-size: 2rem;
-            }
-
-            .about-overview {
-                font-size: 1rem;
-                padding: 0 15px; /* Ajuste para telas menores */
-            }
-
-            .about-content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .academic-timeline h3, .specializations h3, .competency-card h3 {
-                font-size: 1.5rem;
-            }
-
-            .competency-card h4 {
-                font-size: 1.1rem;
-            }
-
-            .skill-tag {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-
-            .interpersonal-skills li {
-                font-size: 0.9rem;
-                padding-left: 25px;
-            }
-            .interpersonal-skills li i {
-                font-size: 1rem;
-            }
-
-            .language-item-compact strong {
-                flex-basis: 60px;
-                font-size: 0.85rem;
-            }
-            .language-item-compact .progress-bar-fill {
-                font-size: 0.6rem;
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-            .experience-card .card-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .portfolio-section {
-                padding: 50px 15px;
-            }
-
-            .portfolio-links a {
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -703,6 +18,7 @@
                 <li><a href="#home">Início</a></li>
                 <li><a href="#about">Sobre Mim</a></li>
                 <li><a href="#experience">Experiência</a></li>
+<li><a href="#experience">Experiência</a></li>
                 <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
@@ -716,10 +32,12 @@
                 <h1>Marcelo Daisuke Yamaki</h1>
                 <h2>Professor, Engenheiro e Consultor</h2>
                 <p class="intro-paragraph">
-                    Profissional versátil com experiência em educação, ciências sociais aplicadas e engenharia. Especializado em integrar disciplinas em contextos
+                    Professor versátil com ampla experiência em educação, ciências sociais aplicadas, engenharia e TI. Especializado em integrar disciplinas em contextos
                     interdisciplinares, promover competências alinhadas às demandas da indústria e aplicar tecnologias emergentes combinadas a
                     metodologias inovadoras no ensino superior.
                 </p>
+                <div class="cta-buttons">
+</p>
                 <div class="cta-buttons">
                     <a href="#about" class="btn">Explore Meu Perfil <i class="fas fa-arrow-right"></i></a>
                     <a href="http://lattes.cnpq.br/2735071763770786" target="_blank" rel="noopener noreferrer" class="btn">
@@ -730,9 +48,11 @@
                     <ul>
                         <li><i class="fas fa-bolt"></i> Engenharia Elétrica</li>
                         <li><i class="fas fa-cogs"></i> Engenharia de Produção</li>
+                        <li><i class="fas fa-desktop"></i> Ciência da Computação</li>
                         <li><i class="fas fa-users"></i> Ciências Sociais </li>
                         <li><i class="fas fa-chart-area"></i> Demografia</li>
                         <li><i class="fas fa-graduation-cap"></i> Educação</li>
+<li><i class="fas fa-graduation-cap"></i> Educação</li>
                         <li><i class="fas fa-balance-scale"></i> Consultoria em Políticas Públicas</li>
                     </ul>
                 </div>
@@ -742,8 +62,9 @@
         <section id="about" class="about-section">
             <h2>Sobre Mim</h2>
             <div class="about-overview">
-                <p>A minha paixão reside na interseção de diversas áreas do conhecimento, promovendo a inovação e o impacto multidisciplinar. Com uma sólida base em engenharia e tecnologia da informação, dediquei minha carreira a integrar disciplinas e aplicar metodologias inovadoras no ensino e desenvolvimento de projetos. Nos últimos cinco anos, tive o privilégio de ministrar mais de 40 disciplinas distintas em aproximadamente 30 cursos de graduação, com o objetivo primordial de preparar profissionais para os desafios reais do mercado. Minha atuação docente se estende à orientação de 53 projetos interdisciplinares, 16 trabalhos de conclusão de curso e 1 projeto de iniciação científica, que culminaram na publicação de diversos trabalhos em anais e periódicos de congressos institucionais. Em 2025, tive a honra de orientar Trabalhos de Conclusão de Curso laureados como "Melhor TCC" em Engenharia Biomédica, Engenharia de Computação e Engenharia de Produção do Centro Universitário FAM, com projetos que abordam desde monitoramento multiparâmetro portátil até análise de segurança industrial e previsão de consumo em linhas de produção. Minha jornada é um reflexo do compromisso em transpor barreiras disciplinares, incentivando a aplicação prática do conhecimento e a formação de profissionais aptos a enfrentar as complexidades do mundo contemporâneo.</p>
-            </div>
+<p>A minha paixão reside na interseção de diversas áreas do conhecimento, promovendo a inovação e o impacto multidisciplinar. Com uma sólida base em engenharia e tecnologia da informação, dediquei minha carreira a integrar disciplinas e aplicar metodologias inovadoras no ensino e desenvolvimento de projetos. Nos últimos cinco anos, tive o privilégio de ministrar mais de 40 disciplinas distintas em aproximadamente 30 cursos de graduação, com o objetivo primordial de preparar profissionais para os desafios reais do mercado. Minha atuação docente se estende à orientação de 53 projetos interdisciplinares, 16 trabalhos de conclusão de curso e 1 projeto de iniciação científica, que culminaram na publicação de diversos trabalhos em anais e periódicos de congressos institucionais. Em 2025, tive a honra de orientar Trabalhos de Conclusão de Curso laureados como "Melhor TCC" em Engenharia Biomédica, Engenharia de Computação e Engenharia de Produção do Centro Universitário FAM,
+Biomédica, Engenharia de Computação e Engenharia de Produção do Centro Universitário FAM, com projetos que abordam desde monitoramento multiparâmetro portátil até análise de segurança industrial e previsão de consumo em linhas de produção. Minha jornada é um reflexo do compromisso em transpor barreiras disciplinares, incentivando a aplicação prática do conhecimento e a formação de profissionais aptos a enfrentar as complexidades do mundo contemporâneo.</p>
+</div>
 
             <div class="about-content-grid">
                 <div class="academic-timeline">
@@ -759,6 +80,7 @@
                             <div class="icon"><i class="fas fa-graduation-cap"></i></div>
                             <h4>Mestrado em Ciências Humanas e Sociais</h4>
                             <p>Universidade Federal do ABC (UFABC) | 2012 - 2014</p>
+<p>Universidade Federal do ABC (UFABC) | 2012 - 2014</p>
                             <p><i>Título: Conflitos e diferenças no ambiente de trabalho de uma empresa japonesa no Brasil: Um estudo de caso na Toyota</i></p>
                         </li>
                         <li class="timeline-item">
@@ -773,7 +95,7 @@
                     <h3>Especializações</h3>
                     <div class="specialization-cards">
                         <div class="specialization-card"><i class="fas fa-book-open"></i> Matemática, Suas Tecnologias e o Mundo do Trabalho (UFPI) - 2023</div>
-                        <div class="specialization-card"><i class="fas fa-chart-line"></i> MBA em Gestão de Recursos Humanos (FAM) - 2023</div>
+<div class="specialization-card"><i class="fas fa-chart-line"></i> MBA em Gestão de Recursos Humanos (FAM) - 2023</div>
                         <div class="specialization-card"><i class="fas fa-flask"></i> Ciências da Natureza, Suas Tecnologias e o Mundo do Trabalho (UFPI) - 2022</div>
                         <div class="specialization-card"><i class="fas fa-lightbulb"></i> Inovação na Educação Mediada por Tecnologias (UFABC) - 2020-2022</div>
                         <div class="specialization-card"><i class="fas fa-chalkboard-teacher"></i> Docência em Ensino Superior (FAM) - 2021</div>
@@ -784,8 +106,9 @@
                     <h3>Habilidades Técnicas</h3>
                     <div class="tag-cloud">
                         <span class="skill-tag"><i class="fas fa-code"></i> Python</span>
+<span class="skill-tag"><i class="fas fa-code"></i> Python</span>
                         <span class="skill-tag"><i class="fas fa-brain"></i> Data Science</span>
-                        <span class="skill-tag"><i class="fas fa-wifi"></i> Internet of Things (IoT) </span>
+                        <span class="skill-tag"><i class="fas fa-wifi"></i> IoT</span>
                         <span class="skill-tag"><i class="fas fa-chart-bar"></i> Lean Management </span>
                         <span class="skill-tag"><i class="fas fa-users-cog"></i> Modelagem Baseada em Agentes</span>
                         <span class="skill-tag"><i class="fas fa-lightbulb"></i> Design Thinking</span>
@@ -796,6 +119,7 @@
                 <div class="competency-card">
                     <h3>Habilidades Interpessoais</h3>
                     <ul class="interpersonal-skills">
+<ul class="interpersonal-skills">
                         <li><i class="fas fa-users"></i> Liderança e Orientação de Equipes</li>
                         <li><i class="fas fa-brain"></i> Pensamento Crítico e Resolução de Problemas</li>
                         <li><i class="fas fa-lightbulb"></i> Inovação e Aplicação de Metodologias Pedagógicas</li>
@@ -808,6 +132,7 @@
                 <div class="competency-card">
                     <h3>Domínio de Idiomas</h3>
                     <div class="language-skills-compact">
+<div class="language-skills-compact">
                         <div class="language-item-compact">
                             <strong>Inglês</strong>
                             <div class="progress-bar-container"><div class="progress-bar-fill" style="width: 95%;">95%</div></div>
@@ -820,6 +145,8 @@
                             <strong>Espanhol</strong>
                             <div class="progress-bar-container"><div class="progress-bar-fill" style="width: 75%;">75%</div></div>
                         </div>
+                        <div class="language-item-compact">
+</div>
                         <div class="language-item-compact">
                             <strong>Francês</strong>
                             <div class="progress-bar-container"><div class="progress-bar-fill" style="width: 60%;">60%</div></div>
@@ -839,6 +166,8 @@
                         <h3>Professor, FAM Centro Universitário</h3>
                     </div>
                     <p class="period">2020 - Atual</p>
+</div>
+                    <p class="period">2020 - Atual</p>
                     <p class="description">Professor versátil com vasta experiência em engenharia e TI, integrando disciplinas em contextos interdisciplinares para formar profissionais alinhados às demandas da indústria.</p>
                     <ul class="achievements">
                         <li>Ministrou mais de 40 disciplinas distintas em ~30 cursos de graduação.</li>
@@ -850,6 +179,7 @@
                 <div class="experience-card">
                     <div class="card-header">
                         <span class="icon"><i class="fas fa-handshake"></i></span>
+<span class="icon"><i class="fas fa-handshake"></i></span>
                         <h3>Subject Matter Expert Senior Advisor, Whiteshield Partners Group</h3>
                     </div>
                     <p class="period">2020 - Atual</p>
@@ -862,6 +192,10 @@
                 </div>
 
                 <div class="experience-card">
+</ul>
+                </div>
+
+                <div class="experience-card">
                     <div class="card-header">
                         <span class="icon"><i class="fas fa-headset"></i></span>
                         <h3>Supervisor Pedagógico, UNIVESP - Universidade Virtual do Estado de São Paulo</h3>
@@ -871,7 +205,7 @@
                     <ul class="achievements">
                         <li>Supervisão de atividades de orientação para 160 facilitadores em Projeto Integrador em Computação II.</li>
                         <li>Gerenciamento de atividades para mais de 5800 alunos matriculados.</li>
-                        <li>Atuação em gestão de estágios, TCC e projetos integradores.</li>
+<li>Atuação em gestão de estágios, TCC e projetos integradores.</li>
                     </ul>
                 </div>
 
@@ -884,7 +218,7 @@
                     <p class="description">Liderou projetos de melhoria contínua e planejamento de produção, otimizando processos e implementando indicadores de produtividade em ambiente multinacional.</p>
                     <ul class="achievements">
                         <li>Implementação e gerenciamento de indicadores de produtividade no processo de pintura automotiva.</li>
-                        <li>Estudo de melhores práticas de gestão da produtividade em filiais da Toyota no Brasil e exterior.</li>
+<li>Estudo de melhores práticas de gestão da produtividade em filiais da Toyota no Brasil e exterior.</li>
                         <li>Participou do desenvolvimento do plano de produção para a primeira fábrica de Sorocaba.</li>
                         <li>Certificado Green Belt Six Sigma.</li>
                     </ul>
@@ -903,6 +237,8 @@
                     <i class="fas fa-flask"></i> ResearchGate
                 </a>
             </div>
+</a>
+            </div>
         </section>
         <section id="contact" class="contact-section">
             <h2>Contato</h2>
@@ -920,6 +256,3 @@
 </body>
 
 </html>
-
-
-
