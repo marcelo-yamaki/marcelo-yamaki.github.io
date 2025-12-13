@@ -300,17 +300,13 @@ background: #FFD700; /* Linha dourada */
             font-size: 1.1rem;
             margin-bottom: 5px;
             color: #333;
-            background: #f4f4f4;
+
         }
 
         .timeline-item p {
             font-size: 0.95rem;
             color: #666;
-}
-
-        .timeline-item p {
-            font-size: 0.95rem;
-            color: #666;
+            background: #f4f4f4;
         }
 
         /* Especializações (Cards/Pills) */
@@ -738,4 +734,5 @@ color: #666;
             }
 
         }
+
 
