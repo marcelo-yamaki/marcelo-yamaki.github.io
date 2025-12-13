@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcelo Daisuke Yamaki | Professor, Engenheiro e Consultor</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Para ícones, você pode usar Font Awesome. Exemplo de como incluir: -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuSlMKnfSMZhYDRBQz8hld/oW6+BLjM9+uF3F/x3M4n9JmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Reset básico e estilos globais */
@@ -58,7 +59,7 @@
         /* Seção Herói (Home) */
         .hero-section {
             position: relative;
-            height: 100vh; 
+            height: 100vh; /* Ajuste conforme necessário */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -73,7 +74,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('selfie_t.jpg') no-repeat center center/cover; 
+            background: url('https://via.placeholder.com/1920x1080/002D62/FFFFFF?text=Sua+Foto+Profissional+Aqui') no-repeat center center/cover; /* Placeholder para sua foto */
             filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
             z-index: 1;
         }
@@ -153,6 +154,183 @@
             align-items: center;
             gap: 0.5rem;
         }
+
+        /* Seção Sobre Mim */
+        .about-section {
+            padding: 80px 20px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #002D62;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-overview {
+            text-align: justify; /* Texto justificado */
+            line-height: 1.8;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: #555;
+            padding: 0 15px; /* Adicionado padding para margem interna em telas menores */
+        }
+
+        .about-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .academic-timeline, .specializations, .languages {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .academic-timeline h3, .specializations h3, .languages h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: #002D62;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Timeline Acadêmica */
+        .timeline {
+            position: relative;
+            margin: 0 0 0 20px;
+            padding: 10px 0;
+            list-style: none;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #FFD700; /* Linha dourada */
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item .icon {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #002D62; /* Círculo azul escuro */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            border: 2px solid #FFD700; /* Borda dourada */
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Especializações (Cards/Pills) */
+        .specialization-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .specialization-card {
+            background-color: #e3f2fd; /* Azul claro */
+            padding: 15px 20px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #002D62;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .specialization-card:hover {
+            transform: translateY(-3px);
+            background-color: #d1e7fa;
+        }
+
+        .specialization-card i {
+            color: #FFD700; /* Dourado */
+        }
+
+        /* Idiomas (Barras de Progresso) */
+        .language-skills {
+            display: grid;
+            gap: 20px;
+        }
+
+        .language-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .language-item strong {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .progress-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background-color: #FFD700; /* Dourado */
+            height: 100%;
+            border-radius: 5px;
+            width: 0; /* Será preenchido via CSS inline ou JS */
+            transition: width 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 5px;
+            font-size: 0.75rem;
+            color: #002D62;
+            font-weight: bold;
+        }
+
         /* Para telas menores */
         @media (max-width: 768px) {
             .navbar ul {
@@ -183,6 +361,27 @@
                 gap: 1rem;
                 font-size: 0.9rem;
             }
+
+            .about-section {
+                padding: 50px 15px;
+            }
+
+            .about-section h2 {
+                font-size: 2rem;
+            }
+
+            .about-overview {
+                font-size: 1rem;
+                padding: 0 10px; /* Ajuste para telas muito pequenas */
+            }
+
+            .about-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .academic-timeline h3, .specializations h3, .languages h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -205,16 +404,17 @@
             <div class="hero-background"></div>
             <div class="hero-content">
                 <h1>Marcelo Daisuke Yamaki</h1>
-                <h2>Professor, Engenheiro e Consultor 
-                <br>Inovação e Impacto Multidisciplinar </br> </h2>
-                <p class="intro-paragraph" align="justify">
-                    Professor versátil com ampla experiência em educação, ciências sociais aplicadas, engenharia e TI. 
-                    Especializado em integrar disciplinas em contextos interdisciplinares, 
-                    promover competências alinhadas às demandas da indústria e aplicar tecnologias emergentes e
-                    metodologias ativas no ensino superior.
+                <h2>Professor, Engenheiro e Consultor | Inovação e Impacto Multidisciplinar</h2>
+                <p class="intro-paragraph">
+                    Professor versátil com ampla experiência em engenharia e TI, especializado em integrar disciplinas em contextos
+                    interdisciplinares, promover competências alinhadas às demandas da indústria e aplicar tecnologias emergentes e
+                    metodologias inovadoras no ensino e desenvolvimento de projetos.
                 </p>
                 <div class="cta-buttons">
                     <a href="#about" class="btn">Explore Meu Perfil <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://www.linkedin.com/in/marcelodaisukeyamaki/" target="_blank" rel="noopener noreferrer" class="btn">
+                        <i class="fab fa-linkedin"></i> Conecte-se no LinkedIn
+                    </a>
                 </div>
                 <div class="visual-highlights">
                     <span><i class="fas fa-chalkboard-teacher"></i> Ensino</span>
@@ -224,24 +424,80 @@
             </div>
         </section>
 
-        <section id="about" style="padding: 50px 20px; text-align: center; background-color: white;">
+        <section id="about" class="about-section">
             <h2>Sobre Mim</h2>
-              <p>A minha paixão reside na interseção de diversas áreas do conhecimento, promovendo a inovação 
-                  e o impacto multidisciplinar.</p>
-                <p>Nos últimos cinco anos, tive o privilégio de ministrar mais de 40 disciplinas distintas 
-                    em aproximadamente 30 cursos de graduação, com o objetivo primordial de preparar profissionais 
-                    para os desafios reais do mercado. Minha atuação docente se estende à orientação de 53 
-                    projetos interdisciplinares, 16 trabalhos de conclusão de curso e 
-                    1 projeto de iniciação científica, que culminaram na publicação de diversos trabalhos 
-                    em anais e periódicos de congressos institucionais. Em 2025, tive a honra de orientar 
-                    Trabalhos de Conclusão de Curso laureados como "Melhor TCC" em Engenharia Biomédica, 
-                    Engenharia de Computação e Engenharia de Produção do Centro Universitário FAM, 
-                    com projetos que abordam desde monitoramento multiparâmetro portátil até 
-                    análise de segurança industrial e previsão de consumo em linhas de produção.</p>
-                <p>Minha jornada é um reflexo do compromisso em transpor barreiras disciplinares, 
-                    incentivando a aplicação prática do conhecimento e a formação de profissionais 
-                    aptos a enfrentar as complexidades do mundo contemporâneo.</p>
+            <div class="about-overview">
+                <p>A minha paixão reside na interseção de diversas áreas do conhecimento, promovendo a inovação e o impacto multidisciplinar. Com uma sólida base em engenharia e tecnologia da informação, dediquei minha carreira a integrar disciplinas e aplicar metodologias inovadoras no ensino e desenvolvimento de projetos. Nos últimos cinco anos, tive o privilégio de ministrar mais de 40 disciplinas distintas em aproximadamente 30 cursos de graduação, com o objetivo primordial de preparar profissionais para os desafios reais do mercado. Minha atuação docente se estende à orientação de 53 projetos interdisciplinares, 16 trabalhos de conclusão de curso e 1 projeto de iniciação científica, que culminaram na publicação de diversos trabalhos em anais e periódicos de congressos institucionais. Em 2025, tive a honra de orientar Trabalhos de Conclusão de Curso laureados como "Melhor TCC" em Engenharia Biomédica, Engenharia de Computação e Engenharia de Produção do Centro Universitário FAM, com projetos que abordam desde monitoramento multiparâmetro portátil até análise de segurança industrial e previsão de consumo em linhas de produção. Minha jornada é um reflexo do compromisso em transpor barreiras disciplinares, incentivando a aplicação prática do conhecimento e a formação de profissionais aptos a enfrentar as complexidades do mundo contemporâneo.</p>
+            </div>
+
+            <div class="about-content-grid">
+                <div class="academic-timeline">
+                    <h3>Formação Acadêmica</h3>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="icon"><i class="fas fa-user-graduate"></i></div>
+                            <h4>Doutorado em Demografia</h4>
+                            <p>Universidade Estadual de Campinas (UNICAMP) | 2015 - 2019</p>
+                            <p><i>Título: Implicações Sociais da Crise Demográfica Japonesa</i></p>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h4>Mestrado em Ciências Humanas e Sociais</h4>
+                            <p>Universidade Federal do ABC (UFABC) | 2012 - 2014</p>
+                            <p><i>Título: Conflitos e diferenças no ambiente de trabalho de uma empresa japonesa no Brasil: Um estudo de caso na Toyota</i></p>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                            <h4>Graduação em Engenharia Elétrica</h4>
+                            <p>Universidade Estadual de Campinas (UNICAMP) | 2002 - 2006</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="specializations">
+                    <h3>Especializações</h3>
+                    <div class="specialization-cards">
+                        <div class="specialization-card"><i class="fas fa-book-open"></i> Matemática, Suas Tecnologias e o Mundo do Trabalho (UFPI) - 2023</div>
+                        <div class="specialization-card"><i class="fas fa-chart-line"></i> MBA em Gestão de Recursos Humanos (FAM) - 2023</div>
+                        <div class="specialization-card"><i class="fas fa-flask"></i> Ciências da Natureza, Suas Tecnologias e o Mundo do Trabalho (UFPI) - 2022</div>
+                        <div class="specialization-card"><i class="fas fa-lightbulb"></i> Inovação na Educação Mediada por Tecnologias (UFABC) - 2020-2022</div>
+                        <div class="specialization-card"><i class="fas fa-chalkboard-teacher"></i> Docência em Ensino Superior (FAM) - 2021</div>
+                    </div>
+                </div>
+
+                <div class="languages">
+                    <h3>Idiomas</h3>
+                    <div class="language-skills">
+                        <div class="language-item">
+                            <strong>Inglês</strong>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 95%;">95%</div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <strong>Japonês</strong>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 90%;">90%</div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <strong>Espanhol</strong>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <strong>Francês</strong>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 60%;">60%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Você pode adicionar mais seções aqui (Experiência, etc.) -->
         <section id="experience" style="padding: 50px 20px; text-align: center; background-color: #f4f4f4;">
             <h2>Experiência</h2>
             <p>Seção para listar experiências profissionais e acadêmicas...</p>
@@ -262,8 +518,6 @@
 
 </body>
 </html>
-
-
 
 
 
