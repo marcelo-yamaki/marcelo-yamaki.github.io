@@ -141,22 +141,32 @@
             transform: translateY(-3px);
         }
 
-        .visual-highlights {
+        /* Novas Áreas de Atuação na Home */
+        .visual-highlights { /* Reutilizando a classe e adaptando */
             margin-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap; /* Permite que os destaques quebrem linha em telas menores */
-            justify-content: center;
-            gap: 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ccc;
+            color: #ccc; /* Text color for the highlights */
+            padding: 1rem 0;
         }
-
-        .visual-highlights span {
+        .visual-highlights ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem 2rem; /* Row-gap and column-gap */
+            padding: 0;
+        }
+        .visual-highlights ul li {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1rem; /* Slightly smaller for multiple items */
+            font-weight: 600;
         }
+        .visual-highlights ul li i {
+            color: #FFD700; /* Gold icon color */
+            font-size: 1.2em; /* Slightly larger icon */
+        }
+
 
         /* Seção Sobre Mim */
         .about-section {
@@ -336,13 +346,13 @@
             transform: translateY(-2px);
         }
 
-        /* Habilidades Interpessoais e Áreas de Atuação */
-        .interpersonal-skills, .areas-of-expertise {
+        /* Habilidades Interpessoais */
+        .interpersonal-skills {
             list-style: none;
             padding-left: 0;
             margin-bottom: 20px;
         }
-        .interpersonal-skills li, .areas-of-expertise li {
+        .interpersonal-skills li {
             position: relative;
             padding-left: 30px;
             margin-bottom: 10px;
@@ -351,7 +361,7 @@
             text-align: left;
         }
 
-        .interpersonal-skills li i, .areas-of-expertise li i {
+        .interpersonal-skills li i {
             position: absolute;
             left: 0;
             top: 3px;
@@ -401,6 +411,7 @@
             color: #002D62;
             font-weight: bold;
         }
+
 
         /* Seção Experiência Profissional */
         .experience-section {
@@ -495,7 +506,7 @@
         }
 
         .experience-card .achievements li:before {
-            content: '\\\\2022'; /* Custom bullet point */
+            content: '\\\\\\\\\\\\\\\\\\\\\\2022'; /* Custom bullet point */
             color: #FFD700; /* Dourado */
             font-weight: bold;
             display: inline-block;
@@ -613,11 +624,13 @@
                 gap: 1rem;
             }
 
-            .visual-highlights {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .visual-highlights ul {
+                gap: 1rem; /* Ajuste para telas menores */
+            }
+            .visual-highlights ul li {
                 font-size: 0.9rem;
             }
+
 
             .about-section {
                 padding: 40px 15px; /* Ajuste para telas menores */
@@ -649,11 +662,11 @@
                 padding: 6px 10px;
             }
 
-            .interpersonal-skills li, .areas-of-expertise li {
+            .interpersonal-skills li {
                 font-size: 0.9rem;
                 padding-left: 25px;
             }
-            .interpersonal-skills li i, .areas-of-expertise li i {
+            .interpersonal-skills li i {
                 font-size: 1rem;
             }
 
@@ -715,9 +728,16 @@
                     </a>
                 </div>
                 <div class="visual-highlights">
-                    <span><i class="fas fa-chalkboard-teacher"></i> Ensino</span>
-                    <span><i class="fas fa-cogs"></i> Engenharia</span>
-                    <span><i class="fas fa-handshake"></i> Consultoria</span>
+                    <ul>
+                        <li><i class="fas fa-bolt"></i> Engenharia Elétrica</li>
+                        <li><i class="fas fa-cogs"></i> Engenharia de Produção</li>
+                        <li><i class="fas fa-desktop"></i> Ciência da Computação</li>
+                        <li><i class="fas fa-users"></i> Sociologia</li>
+                        <li><i class="fas fa-chart-area"></i> Demografia</li>
+                        <li><i class="fas fa-graduation-cap"></i> Educação</li>
+                        <li><i class="fas fa-city"></i> Planejamento Urbano e Regional</li>
+                        <li><i class="fas fa-balance-scale"></i> Consultoria em Políticas Públicas</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -784,17 +804,6 @@
                         <span class="skill-tag"><i class="fas fa-comments"></i> ChatGPT & Generative AI</span>
                         <span class="skill-tag"><i class="fas fa-industry"></i> Automação Industrial</span>
                     </div>
-                    <h4>Áreas de Atuação</h4>
-                    <ul class="areas-of-expertise">
-                        <li><i class="fas fa-bolt"></i> Engenharia Elétrica</li>
-                        <li><i class="fas fa-cogs"></i> Engenharia de Produção</li>
-                        <li><i class="fas fa-desktop"></i> Ciência da Computação</li>
-                        <li><i class="fas fa-users"></i> Sociologia</li>
-                        <li><i class="fas fa-chart-area"></i> Demografia</li>
-                        <li><i class="fas fa-graduation-cap"></i> Educação (Pedagogia, Gestão Educacional)</li>
-                        <li><i class="fas fa-city"></i> Planejamento Urbano e Regional</li>
-                        <li><i class="fas fa-balance-scale"></i> Consultoria em Políticas Públicas</li>
-                    </ul>
                 </div>
 
                 <div class="competency-card">
