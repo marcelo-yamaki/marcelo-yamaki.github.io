@@ -465,7 +465,7 @@
             color: #777;
             margin-bottom: 10px;
             font-weight: 600;
-            align-items: center;
+            text-align: center;
         }
 
         .experience-card .description {
@@ -684,4 +684,5 @@
                 padding: 0.8rem 1rem;
             }
         }
+
 
