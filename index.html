@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Página Pessoal</title>
+
+  <!-- ====== ESTILO GLOBAL ====== -->
+  <style>
+    :root{
+      --primary:#1f77ff;
+      --dark:#0d1117;
+      --light:#ffffff;
+      --gray:#8b949e;
+      --spacing:clamp(1rem,2vw,2rem);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{color:var(--light);background:var(--dark);line-height:1.6;}
+
+    /* ---------- HEADER & NAV ---------- */
+    header{
+      position:sticky;top:0;z-index:100;
+      backdrop-filter:blur(8px);
+      background:rgba(13,17,23,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--spacing);}
+    nav h1{font-size:1.5rem;font-weight:700;color:var(--primary);}
+    .nav-links{
+      display:flex;gap:1.5rem;list-style:none;
+    }
+    .nav-links a{
+      color:var(--light);text-decoration:none;font-weight:500;position:relative;
+    }
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--primary);transition:width .3s ease;
+    }
+    .nav-links a:hover::after{width:100%;}
+    /* Mobile menu */
+    .burger{display:none;font-size:1.7rem;cursor:pointer;color:var(--light);}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      min-height:80vh;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:0 var(--spacing);
+      background:linear-gradient(135deg,#1f77ff 0%,#7928ff 100%);
+    }
+    .hero h2{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;}
+    .hero p{font-size:clamp(1rem,2.5vw,1.25rem);max-width:600px;margin-bottom:2rem;}
+    .btn{
+      display:inline-block;padding:.75rem 2rem;border-radius:30px;
+      background:var(--light);color:var(--dark);font-weight:600;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
+
+    /* ---------- SEÇÕES GENÉRICAS ---------- */
+    section{padding:4rem var(--spacing);}
+    section h3{font-size:2rem;margin-bottom:1.5rem;color:var(--primary);}
+    .container{max-width:1100px;margin:auto;}
+
+    /* ---------- SOBRE ---------- */
+    .sobre p{color:var(--gray);max-width:800px;}
+
+    /* ---------- PROJETOS ---------- */
+    .cards{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    .card{
+      background:#161b22;border:1px solid rgba(255,255,255,0.05);border-radius:8px;
+      padding:1.5rem;transition:transform .25s ease, border .25s ease;
+    }
+    .card:hover{transform:translateY(-6px);border-color:var(--primary);}
+    .card h4{margin-bottom:.75rem;color:var(--light);}
+    .card p{color:var(--gray);font-size:.9rem;}
+
+    /* ---------- HABILIDADES ---------- */
+    .skills-list{display:flex;flex-wrap:wrap;gap:.75rem;}
+    .skill{
+      background:var(--primary);padding:.4rem .8rem;border-radius:20px;
+      font-size:.9rem;font-weight:600;color:var(--light);
+      transition:transform .25s ease;
+    }
+    .skill:hover{transform:scale(1.05);}
+
+    /* ---------- CONTATO ---------- */
+    .contact a{color:var(--primary);text-decoration:none;font-weight:600;}
+
+    /* ---------- RODAPÉ ---------- */
+    footer{padding:2rem var(--spacing);text-align:center;color:var(--gray);font-size:.85rem;}
+
+    /* ---------- MEDIA QUERIES ---------- */
+    @media (max-width:768px){
+      .nav-links{position:fixed;inset:0 0 0 40%;flex-direction:column;padding-top:5rem;
+                 background:rgba(13,17,23,.95);transform:translateX(100%);transition:transform .4s ease;}
+      .nav-links.show{transform:translateX(0);}
+      .burger{display:block;}
+
+      .hero{min-height:70vh;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <nav class="container">
+      <h1>SeuNome</h1>
+
+      <!-- Menu Desktop -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <!-- Ícone Mobile -->
+      <span class="burger" id="burger">&#9776;</span>
+    </nav>
+  </header>
+
+  <!-- ====== HERO / INÍCIO ====== -->
+  <section class="hero" id="home">
+    <h2>Olá, eu sou <strong>Seu Nome</strong></h2>
+    <p>Profissional multidisciplinar apaixonado por desenvolvimento, design e inovação.</p>
+    <a href="#projetos" class="btn">Ver Projetos</a>
+  </section>
+
+  <!-- ====== SOBRE ====== -->
+  <section id="sobre">
+    <div class="container sobre">
+      <h3>Sobre Mim</h3>
+      <p>
+        Escreva um breve resumo da sua trajetória, destacando experiências, valores e motivações.
+        Mantenha o texto conciso e pessoal, convidando o visitante a explorar o restante da página.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== PROJETOS ====== -->
+  <section id="projetos">
+    <div class="container">
+      <h3>Projetos em Destaque</h3>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Projeto&nbsp;1</h4>
+          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
+        </div>
+        <div class="card">
+          <h4>Projeto&nbsp;2</h4>
+          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
+        </div>
+        <div class="card">
+          <h4>Projeto&nbsp;3</h4>
+          <p>Descrição rápida do projeto, tecnologias utilizadas e objetivo principal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HABILIDADES ====== -->
+  <section id="habilidades">
+    <div class="container">
+      <h3>Habilidades</h3>
+
+      <div class="skills-list">
+        <span class="skill">HTML&nbsp;/&nbsp;CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">React</span>
+        <span class="skill">UI/UX Design</span>
+        <span class="skill">Python</span>
+        <span class="skill">Git&nbsp;&amp;&nbsp;GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTATO ====== -->
+  <section id="contato">
+    <div class="container contact">
+      <h3>Entre em Contato</h3>
+      <p>Quer conversar sobre oportunidades ou colaborações? Envie um e-mail para
+         <a href="mailto:voce@email.com">voce@email.com</a>
+         ou conecte-se comigo no <a href="https://www.linkedin.com/" >LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== RODAPÉ ====== -->
+  <footer>
+    © <span id="year"></span> SeuNome • Feito com ?? e GitHub Pages
+  </footer>
+
+  <!-- ====== JS (menu mobile + ano dinâmico) ====== -->
+  <script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', ()=>navLinks.classList.toggle('show'));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
