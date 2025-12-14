@@ -1,694 +1,1024 @@
-        /* Reset b√°sico e estilos globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Barra de Navega√ß√£o */
-        .navbar {
-            background-color: #002D62; /* Azul escuro */
-            padding: 1rem 2rem;
-            color: white;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .navbar ul li a:hover {
-            color: #FFD700; /* Dourado */
-        }
-
-        /* Se√ß√£o Her√≥i (Home) */
-        .hero-section {
-            position: relative;
-            height: 100vh; /* Ajuste conforme necess√°rio */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden; /* Garante que a imagem de fundo n√£o ultrapasse */
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('selfie_t.jpg') no-repeat center center/cover; 
-            filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
-            border-radius: 10px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #FFD700; /* Dourado */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-content .intro-paragraph {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-            text-align: justify; 
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap; /* Permite que os bot√µes quebrem linha em telas menores */
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-buttons .btn {
-            background-color: #FFD700; /* Dourado */
-            color: #002D62; /* Azul escuro */
-            padding: 0.9rem 1.8rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-buttons .btn:hover {
-            background-color: #e6c200; /* Dourado mais escuro */
-            transform: translateY(-3px);
-        }
-
-        .visual-highlights { /* Reutilizando a classe e adaptando */
-            margin-top: 1.5rem;
-            color: #ccc; /* Text color for the highlights */
-            padding: 1rem 0;
-        }
-        .visual-highlights ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem 2rem; /* Row-gap and column-gap */
-            padding: 0;
-        }
-        .visual-highlights ul li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem; /* Slightly smaller for multiple items */
-            font-weight: 600;
-        }
-        .visual-highlights ul li i {
-            color: #FFD700; /* Gold icon color */
-            font-size: 1.2em; /* Slightly larger icon */
-        }
-
-
-        /* Se√ß√£o Sobre Mim */
-        .about-section {
-            padding: 60px 20px; /* Margem diminu√≠da */
-            background-color: white;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .about-overview {
-            text-align: justify; /* Texto justificado */
-            line-height: 1.8;
-            font-size: 1.1rem;
-            max-width: 850px; /* Aumentado ligeiramente */
-            margin: 0 auto 50px auto;
-            color: #555;
-            padding: 0 20px; /* Mant√©m padding interno */
-        }
-
-        .about-content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .academic-timeline, .specializations, .competency-card { /* Adicionado competency-card aqui */
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            display: flex; /* Para flex-direction column abaixo */
-            flex-direction: column;
-        }
-
-        .academic-timeline h3, .specializations h3, .competency-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: #002D62;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .competency-card h4 { /* Estilo para os sub-t√≠tulos dentro do card de compet√™ncias */
-            font-size: 1.3rem;
-            color: #002D62;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            text-align: center;
-        }
-
-        /* Timeline Acad√™mica */
-        .timeline {
-            position: relative;
-            margin: 0 0 0 20px;
-            padding: 10px 0;
-            list-style: none;
-            flex-grow: 1; /* Permite que o cart√£o se expanda */
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: #FFD700; /* Linha dourada */
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 30px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item .icon {
-            position: absolute;
-            left: -10px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: #002D62; /* C√≠rculo azul escuro */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            border: 2px solid #FFD700; /* Borda dourada */
-        }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .timeline-item p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* Especializa√ß√µes (Cards/Pills) */
-        .specialization-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            flex-grow: 1; /* Permite que o cart√£o se expanda */
-        }
-
-        .specialization-card {
-            background-color: #e3f2fd; /* Azul claro */
-            padding: 15px 20px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: #002D62;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .specialization-card:hover {
-            transform: translateY(-3px);
-            background-color: #d1e7fa;
-        }
-
-        .specialization-card i {
-            color: #FFD700; /* Dourado */
-        }
-
-        /* Tag Cloud de Habilidades T√©cnicas */
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .skill-tag {
-            background-color: #FFD700; /* Dourado */
-            color: #002D62; /* Azul escuro */
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background-color: #e6c200;
-            transform: translateY(-2px);
-        }
-
-        /* Habilidades Interpessoais */
-        .interpersonal-skills {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 20px;
-        }
-        .interpersonal-skills li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #555;
-            text-align: left;
-        }
-
-        .interpersonal-skills li i {
-            position: absolute;
-            left: 0;
-            top: 3px;
-            color: #002D62; /* Azul escuro para √≠cones de lista */
-            font-size: 1.1rem;
-        }
-
-        /* Idiomas compactados */
-        .language-skills-compact {
-            display: grid;
-            gap: 15px;
-            flex-grow: 1; /* Permite que o cart√£o se expanda */
-        }
-
-        .language-item-compact {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .language-item-compact strong {
-            flex-basis: 80px; /* Largura fixa para o nome do idioma */
-            text-align: right;
-            font-size: 0.95rem;
-            color: #333;
-        }
-
-        .language-item-compact .progress-bar-container {
-            flex-grow: 1;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            height: 15px;
-            overflow: hidden;
-        }
-
-        .language-item-compact .progress-bar-fill {
-            background-color: #FFD700; /* Dourado */
-            height: 100%;
-            border-radius: 5px;
-            width: 0; /* Preenchido via style inline */
-            transition: width 0.5s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 5px;
-            font-size: 0.75rem;
-            color: #002D62;
-            font-weight: bold;
-        }
-
-
-        /* Se√ß√£o Experi√™ncia Profissional */
-        .experience-section {
-            padding: 80px 20px;
-            background-color: #f9f9f9; /* Fundo ligeiramente diferente para contrastar */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .experience-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .experience-card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .experience-card .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .experience-card .card-header .icon {
-            font-size: 2rem;
-            color: #FFD700; /* Dourado */
-            margin-right: 15px;
-        }
-
-        .experience-card .card-header h3 {
-            font-size: 1.4rem;
-            color: #002D62;
-            font-weight: 700;
-            line-height: 1.3;
-            margin: 0;
-        }
-
-        .experience-card .period {
-            font-size: 0.95rem;
-            color: #777;
-            margin-bottom: 10px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .experience-card .description {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .experience-card .achievements {
-            list-style-type: none; /* Remove default bullet */
-            padding-left: 0;
-            margin-top: 15px;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        .experience-card .achievements li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .experience-card .achievements li:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-card .achievements li:before {
-            content: '*'; 
-            color: #FFD700; /* Dourado */
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        /* Se√ß√£o Portf√≥lio */
-        .portfolio-section {
-            padding: 80px 20px;
-            background-color: white;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            margin-bottom: 40px;
-        }
-
-        .portfolio-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .portfolio-links a {
-            background-color: #002D62; /* Azul escuro */
-            color: white;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .portfolio-links a:hover {
-            background-color: #001f44; /* Azul ainda mais escuro */
-            transform: translateY(-3px);
-        }
-
-        .portfolio-links a i {
-            color: #FFD700; /* √çcone dourado */
-        }
-
-        /* Se√ß√£o Contato */
-        .contact-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #002D62;
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #002D62;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #FFD700;
-        }
-
-
-        /* Para telas menores */
-        @media (max-width: 768px) {
-            .navbar ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.4rem;
-            }
-
-            .hero-content .intro-paragraph {
-                font-size: 0.95rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .visual-highlights ul {
-                gap: 1rem; /* Ajuste para telas menores */
-            }
-            .visual-highlights ul li {
-                font-size: 0.9rem;
-            }
-
-
-            .about-section {
-                padding: 40px 15px; /* Ajuste para telas menores */
-            }
-
-            .about-section h2 {
-                font-size: 2rem;
-            }
-
-            .about-overview {
-                font-size: 1rem;
-                padding: 0 15px; /* Ajuste para telas menores */
-            }
-
-            .about-content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .academic-timeline h3, .specializations h3, .competency-card h3 {
-                font-size: 1.5rem;
-            }
-
-            .competency-card h4 {
-                font-size: 1.1rem;
-            }
-
-            .skill-tag {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-
-            .interpersonal-skills li {
-                font-size: 0.9rem;
-                padding-left: 25px;
-            }
-            .interpersonal-skills li i {
-                font-size: 1rem;
-            }
-
-            .language-item-compact strong {
-                flex-basis: 60px;
-                font-size: 0.85rem;
-            }
-            .language-item-compact .progress-bar-fill {
-                font-size: 0.6rem;
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-            .experience-card .card-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .portfolio-section {
-                padding: 50px 15px;
-            }
-
-            .portfolio-links a {
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
-            }
-        }
-
-
-
-
-
-
-
-
+/*
+   ----------------------------------------------------
+   1. Reset B·sico e Vari·veis CSS (Boas Pr·ticas)
+   ----------------------------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border n„o aumentam a largura/altura */
+}
+
+:root {
+    /* Cores */
+    --primary-color: #002D62; /* Azul escuro principal */
+    --secondary-color: #FFD700; /* Dourado para acentuaÁ„o */
+    --background-light: #f4f4f4; /* Fundo claro e suave (do seu original) */
+    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seÁıes */
+    --text-dark: #333; /* Texto principal escuro */
+    --text-light: #555; /* Texto secund·rio ou descriÁıes */
+    --text-lighter: #666; /* Texto de detalhes */
+    --border-color: #e0e0e0; /* Cor da borda suave */
+    --card-background: #ffffff; /* Fundo dos cards/colunas */
+
+    /* Fontes */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* EspaÁamento e Bordas */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --spacing-xxl: 80px;
+    --border-radius-base: 8px;
+    --shadow-base: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para profundidade */
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+}
+
+/*
+   ----------------------------------------------------
+   2. Estilos Globais e do Corpo
+   ----------------------------------------------------
+*/
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Container principal (n„o usado da mesma forma que o template original,
+   a largura m·xima È controlada por seÁıes individuais para maior flexibilidade) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/*
+   ----------------------------------------------------
+   3. Estilos da Barra de NavegaÁ„o (Navbar)
+   ----------------------------------------------------
+*/
+.navbar {
+    background-color: var(--primary-color);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para ·rea de clique */
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: var(--secondary-color); /* Dourado no hover ou item ativo */
+}
+
+/*
+   ----------------------------------------------------
+   4. Estilos da SeÁ„o Hero (Banner de Destaque)
+   ----------------------------------------------------
+*/
+.hero-section {
+    position: relative;
+    height: 100vh; /* Ocupa a altura total da viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding: var(--spacing-md); /* Garante algum padding em telas menores */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Usando a imagem profissional para o hero */
+    background: url('bismuto.jpg') no-repeat center center/cover;
+    filter: brightness(0.4); /* Escurece a imagem para melhor legibilidade do texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+    border-radius: var(--border-radius-base);
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: white; /* TÌtulo principal branco */
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--secondary-color); /* SubtÌtulo dourado */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.intro-paragraph {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons .btn {
+    background-color: var(--secondary-color); /* Bot„o dourado */
+    color: var(--primary-color); /* Texto azul escuro */
+    padding: 0.9rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #e6c200; /* Dourado mais escuro */
+    transform: translateY(-3px);
+}
+
+.visual-highlights {
+    margin-top: 1.5rem;
+    color: #ccc;
+    padding: 1rem 0;
+}
+.visual-highlights ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    padding: 0;
+}
+.visual-highlights ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.visual-highlights ul li i {
+    color: var(--secondary-color); /* Õcone dourado */
+    font-size: 1.2em;
+}
+
+/*
+   ----------------------------------------------------
+   5. Layout de Duas Colunas Principal (main-content-wrapper)
+   ----------------------------------------------------
+*/
+.main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas se quebrem em linhas em telas menores */
+    gap: var(--spacing-lg); /* EspaÁo entre as colunas */
+    max-width: 1200px; /* Largura m·xima para o conte˙do principal */
+    margin: var(--spacing-xxl) auto; /* Margem superior/inferior para o container */
+    padding: 0 var(--spacing-md); /* Padding nas laterais */
+}
+
+.main-column {
+    flex: 1; /* Permite que as colunas cresÁam e encolham igualmente */
+    min-width: 320px; /* Largura mÌnima para evitar que as colunas fiquem muito estreitas */
+    background-color: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+    display: flex; /* Para organizar o conte˙do interno */
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conte˙do ao topo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-column:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.main-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-column h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.main-column .column-intro {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.main-column p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+    text-align: justify;
+}
+
+/* Bot„o dentro das colunas */
+.main-column .btn {
+    align-self: center; /* Centraliza o bot„o dentro da coluna */
+    margin-top: auto; /* Empurra o bot„o para baixo se o conte˙do for menor */
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.main-column .primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.main-column .primary-btn:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o about-content-grid dentro da coluna direita */
+.main-column .about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Para empilhar no layout de coluna */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.main-column .about-content-grid h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+.main-column .about-content-grid h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+/*
+   ----------------------------------------------------
+   6. Estilos da SeÁ„o "Sobre Mim" original (adaptados e aninhados)
+   ----------------------------------------------------
+*/
+.about-section { /* Esta classe È mantida para os cards internos */
+    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois j· est· no .main-content-wrapper */
+    background-color: transparent; /* Fundo transparente pois j· est· no .main-column */
+    max-width: none; /* Remove a largura m·xima, ser· controlada pelo .main-column */
+    margin: 0;
+}
+.about-section h2 { /* Removido o estilo do h2 pois È controlado pelo .main-column h2 */
+    display: none; /* Esconde o H2 original se ele ainda existir, pois criamos um novo para a coluna */
+}
+
+.about-overview { /* Estilos j· ajustados no .main-column p */
+    display: none; /* Esconde o about-overview original, pois seu conte˙do foi movido */
+}
+
+/* Removendo estilos de timeline */
+.academic-timeline, .specializations {
+    display: none; /* Esconde as seÁıes originais, pois foram unificadas */
+}
+
+/* Novo estilo para a seÁ„o unificada de formaÁ„o e qualificaÁıes */
+.combined-education-qualifications {
+    background-color: var(--background-dark);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-md);
+}
+
+.combined-education-qualifications h3 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.clean-list {
+    list-style: none; /* Remove marcadores padr„o */
+    padding-left: 0;
+}
+
+.clean-list li {
+    position: relative;
+    padding-left: 20px; /* EspaÁo para o marcador customizado */
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.clean-list li:last-child {
+    margin-bottom: 0;
+}
+
+.clean-list li::before {
+    content: '\2022'; /* Marcador de lista simples (bullet) */
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.clean-list li.list-separator {
+    content: ''; /* Remove o bullet do separador */
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 15px 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    left: auto;
+    width: 100%;
+}
+.clean-list li.list-separator::before {
+    content: none;
+}
+
+
+/* Tag Cloud de Habilidades TÈcnicas */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+.skill-tag {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.skill-tag:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Habilidades Interpessoais */
+.interpersonal-skills {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--spacing-md);
+}
+.interpersonal-skills li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    color: var(--text-dark); /* Alterado para text-dark para mais contraste */
+    text-align: left;
+}
+.interpersonal-skills li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Idiomas compactados */
+.language-skills-compact {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+.language-item-compact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+.language-item-compact strong {
+    flex-basis: 80px;
+    text-align: right;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+.language-item-compact .progress-bar-container {
+    flex-grow: 1;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    height: 15px;
+    overflow: hidden;
+}
+.language-item-compact .progress-bar-fill {
+    background-color: var(--secondary-color);
+    height: 100%;
+    border-radius: 5px;
+    width: 0; /* Preenchido via style inline */
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/*
+   ----------------------------------------------------
+   NOVOS ESTILOS PARA A SE«√O DE HABILIDADES
+   ----------------------------------------------------
+*/
+.skills-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background-color: var(--background-dark); /* Fundo ligeiramente mais escuro */
+    text-align: center;
+    max-width: 1200px;
+    margin: var(--spacing-xxl) auto; /* Margens para centralizar e espaÁar */
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+}
+
+.skills-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color); /* Cor de destaque */
+    margin: var(--spacing-sm) auto 0;
+    border-radius: 2px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem para a prÛxima linha em telas menores */
+    justify-content: center; /* Centraliza as colunas */
+    gap: var(--spacing-lg); /* EspaÁo entre as colunas */
+    margin-top: var(--spacing-lg);
+}
+
+.skill-category {
+    background-color: var(--card-background); /* Fundo branco para os cards */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-base);
+    padding: var(--spacing-lg) var(--spacing-md);
+    flex: 1; /* Permite que os itens cresÁam e ocupem o espaÁo disponÌvel */
+    min-width: 280px; /* Largura mÌnima para cada coluna antes de quebrar */
+    max-width: 350px; /* Largura m·xima para cada coluna */
+    box-shadow: var(--shadow-base);
+    text-align: left; /* Alinha o texto dentro de cada coluna ‡ esquerda */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex; /* Para organizar o conte˙do */
+    flex-direction: column;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /* Efeito de elevaÁ„o ao passar o mouse */
+    box-shadow: var(--shadow-hover);
+}
+
+.skill-category .icon {
+    font-size: 3em;
+    color: var(--secondary-color); /* Cor do Ìcone */
+    margin-bottom: var(--spacing-md);
+    display: block; /* Garante que o Ìcone esteja em sua prÛpria linha */
+    text-align: center; /* Centraliza o Ìcone */
+}
+
+.skill-category h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center; /* Centraliza o tÌtulo da categoria */
+    font-family: var(--font-heading);
+}
+
+/* Ajustes para a Tag Cloud e Habilidades Interpessoais dentro da nova estrutura */
+.skill-category .tag-cloud,
+.skill-category .interpersonal-skills {
+    margin-top: 0; /* Remove a margem superior que pode ter sido herdada */
+    margin-bottom: 0; /* Remove a margem inferior para melhor controle */
+}
+
+
+/*
+   ----------------------------------------------------
+   7. Estilos da SeÁ„o ExperiÍncia Profissional
+   ----------------------------------------------------
+*/
+.experience-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background-color: var(--background-dark);
+    max-width: 1200px;
+    margin: var(--spacing-xxl) auto;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+}
+
+.experience-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para experiÍncia profissional */
+    gap: var(--spacing-lg);
+}
+
+.experience-card {
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.experience-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.experience-card .card-header .icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: var(--spacing-sm);
+}
+
+.experience-card .card-header h3 {
+    font-family: var(--font-body); /* Usar Montserrat para subtÌtulos */
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.experience-card .period {
+    font-size: 0.95rem;
+    color: var(--text-lighter);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.experience-card .description {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.experience-card .achievements {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-sm);
+}
+
+.experience-card .achievements li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-dark); /* Alterado para text-dark para mais contraste */
+}
+
+.experience-card .achievements li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-card .achievements li:before {
+    content: '\2022'; /* Marcador de lista simples */
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*
+   ----------------------------------------------------
+   8. Estilos da SeÁ„o PortfÛlio
+   ----------------------------------------------------
+*/
+.portfolio-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background-color: var(--card-background);
+    text-align: center;
+    max-width: 1200px;
+    margin: var(--spacing-xxl) auto;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+}
+
+.portfolio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfolio-links a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-links a:hover {
+    background-color: #001f44; /* Azul ainda mais escuro */
+    transform: translateY(-3px);
+}
+
+.portfolio-links a i {
+    color: var(--secondary-color);
+}
+
+/*
+   ----------------------------------------------------
+   9. Estilos da SeÁ„o Contato
+   ----------------------------------------------------
+*/
+.contact-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    text-align: center;
+    background-color: var(--background-dark);
+    max-width: 1200px;
+    margin: var(--spacing-xxl) auto;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-flex; /* Para alinhar o Ìcone com o texto */
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+/*
+   ----------------------------------------------------
+   10. Estilos do RodapÈ (Footer)
+   ----------------------------------------------------
+*/
+footer {
+    text-align: center;
+    padding: var(--spacing-md) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9em;
+    margin-top: var(--spacing-xxl); /* Garante espaÁo apÛs a ˙ltima seÁ„o */
+}
+
+
+/*
+   ----------------------------------------------------
+   11. Responsividade (Media Queries)
+   ----------------------------------------------------
+*/
+
+/* Para telas menores que 992px (tablets e alguns notebooks) */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+    .intro-paragraph {
+        font-size: 1rem;
+    }
+    .main-content-wrapper,
+    .experience-section,
+    .portfolio-section,
+    .contact-section,
+    .skills-section { /* Adicionado a nova seÁ„o de habilidades */
+        margin: var(--spacing-xl) auto;
+        padding: 0 var(--spacing-md);
+    }
+    .main-column h2 {
+        font-size: 2em;
+    }
+    .main-column .column-intro {
+        font-size: 1rem;
+    }
+    .combined-education-qualifications h3,
+    .competency-card h3 {
+        font-size: 1.2rem;
+    }
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+        font-size: 2.2rem;
+    }
+    .experience-card .card-header h3 {
+        font-size: 1.3rem;
+    }
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr); /* MantÈm 2 colunas para tablets */
+    }
+
+    .skills-grid {
+        gap: var(--spacing-md); /* Reduz espaÁo entre colunas em tablets */
+    }
+    .skill-category {
+        padding: var(--spacing-md);
+    }
+    .skill-category h3 {
+        font-size: 1.6em;
+    }
+}
+
+/* Para telas menores que 768px (smartphones grandes, tablets pequenos) */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hero-section {
+        height: 80vh; /* Reduz altura do hero em telas menores */
+    }
+    .hero-content {
+        padding: var(--spacing-md);
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+    .intro-paragraph {
+        font-size: 0.95rem;
+        text-align: left; /* Ou center, dependendo da preferÍncia */
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .visual-highlights ul {
+        gap: 1rem;
+    }
+    .visual-highlights ul li {
+        font-size: 0.9rem;
+    }
+
+    .main-content-wrapper {
+        flex-direction: column; /* Colunas se empilham verticalmente */
+        gap: var(--spacing-md);
+        margin: var(--spacing-xl) auto;
+        padding: 0 var(--spacing-sm);
+    }
+    .main-column {
+        min-width: unset; /* Remove a largura mÌnima quando as colunas est„o empilhadas */
+        padding: var(--spacing-md);
+    }
+    .main-column h2 {
+        font-size: 1.8em;
+    }
+    .main-column .column-intro {
+        font-size: 0.95rem;
+    }
+
+    .main-column .about-content-grid {
+        gap: var(--spacing-sm);
+    }
+    .combined-education-qualifications h3,
+    .competency-card h3 {
+        font-size: 1.1rem;
+    }
+    .clean-list li {
+        font-size: 0.9rem;
+    }
+    .skill-tag {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    .language-item-compact strong {
+        flex-basis: 60px;
+        font-size: 0.85rem;
+    }
+    .language-item-compact .progress-bar-fill {
+        font-size: 0.6rem;
+    }
+
+    .experience-section, .portfolio-section, .contact-section, .skills-section { /* Adicionado a nova seÁ„o de habilidades */
+        padding: var(--spacing-lg) var(--spacing-sm);
+        margin: var(--spacing-xl) auto;
+    }
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+        font-size: 2rem;
+    }
+    .experience-grid {
+        grid-template-columns: 1fr; /* Cartıes de experiÍncia empilham em 1 coluna */
+    }
+    .experience-card .card-header h3 {
+        font-size: 1.2rem;
+    }
+    .portfolio-links a {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    footer {
+        margin-top: var(--spacing-xl);
+    }
+
+    /* Regras especÌficas para a seÁ„o de habilidades em telas menores */
+    .skills-grid {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+        align-items: center; /* Centraliza as colunas empilhadas */
+    }
+    .skill-category {
+        max-width: 90%; /* Ocupa mais largura em telas menores */
+        margin-bottom: var(--spacing-md); /* EspaÁamento entre as colunas empilhadas */
+    }
+    .skill-category:last-child {
+        margin-bottom: 0;
+    }
+    .skill-category h3 {
+        font-size: 1.5em;
+    }
+    .skill-category .icon {
+        font-size: 2.5em;
+    }
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: var(--spacing-sm);
+    }
+    .navbar ul {
+        gap: 0.8rem;
+    }
+    .hero-section {
+        height: 70vh;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    .intro-paragraph {
+        font-size: 0.9rem;
+    }
+    .main-content-wrapper {
+        gap: var(--spacing-sm);
+        margin: var(--spacing-lg) auto;
+    }
+    .main-column h2 {
+        font-size: 1.5em;
+    }
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+        font-size: 1.8rem;
+    }
+    .experience-card .card-header .icon {
+        font-size: 1.8rem;
+    }
+    .experience-card .card-header h3 {
+        font-size: 1.1rem;
+    }
+    .skill-category {
+        padding: var(--spacing-sm);
+    }
+    .skill-category h3 {
+        font-size: 1.3em;
+    }
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    .language-item-compact strong {
+        flex-basis: 50px;
+        font-size: 0.8rem;
+    }
+}
