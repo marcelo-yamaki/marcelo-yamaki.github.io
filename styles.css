@@ -1,6 +1,5 @@
         /* Reset básico e estilos globais */
         * {
-            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -685,6 +684,7 @@
                 padding: 0.8rem 1rem;
             }
         }
+
 
 
 
