@@ -1,22 +1,22 @@
 /*
    ----------------------------------------------------
-   1. Reset B·sico e Vari·veis CSS (Boas Pr·ticas)
+   1. Reset B√°sico e Vari√°veis CSS (Boas Pr√°ticas)
    ----------------------------------------------------
 */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border n„o aumentam a largura/altura */
+    box-sizing: border-box; /* Garante que padding e border n√£o aumentam a largura/altura */
 }
 
 :root {
     /* Cores */
     --primary-color: #002D62; /* Azul escuro principal */
-    --secondary-color: #FFD700; /* Dourado para acentuaÁ„o */
+    --secondary-color: #FFD700; /* Dourado para acentua√ß√£o */
     --background-light: #f4f4f4; /* Fundo claro e suave (do seu original) */
-    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seÁıes */
+    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para se√ß√µes */
     --text-dark: #333; /* Texto principal escuro */
-    --text-light: #555; /* Texto secund·rio ou descriÁıes */
+    --text-light: #555; /* Texto secund√°rio ou descri√ß√µes */
     --text-lighter: #666; /* Texto de detalhes */
     --border-color: #e0e0e0; /* Cor da borda suave */
     --card-background: #ffffff; /* Fundo dos cards/colunas */
@@ -25,7 +25,7 @@
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* EspaÁamento e Bordas */
+    /* Espa√ßamento e Bordas */
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
@@ -65,8 +65,8 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Container principal (n„o usado da mesma forma que o template original,
-   a largura m·xima È controlada por seÁıes individuais para maior flexibilidade) */
+/* Container principal (n√£o usado da mesma forma que o template original,
+   a largura m√°xima √© controlada por se√ß√µes individuais para maior flexibilidade) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,7 +75,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   3. Estilos da Barra de NavegaÁ„o (Navbar)
+   3. Estilos da Barra de Navega√ß√£o (Navbar)
    ----------------------------------------------------
 */
 .navbar {
@@ -102,7 +102,7 @@ a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease;
-    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para ·rea de clique */
+    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para √°rea de clique */
 }
 
 .navbar ul li a:hover,
@@ -112,7 +112,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   4. Estilos da SeÁ„o Hero (Banner de Destaque)
+   4. Estilos da Se√ß√£o Hero (Banner de Destaque)
    ----------------------------------------------------
 */
 .hero-section {
@@ -152,14 +152,14 @@ a:hover {
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: white; /* TÌtulo principal branco */
+    color: white; /* T√≠tulo principal branco */
 }
 
 .hero-content h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--secondary-color); /* SubtÌtulo dourado */
+    color: var(--secondary-color); /* Subt√≠tulo dourado */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -182,7 +182,7 @@ a:hover {
 }
 
 .cta-buttons .btn {
-    background-color: var(--secondary-color); /* Bot„o dourado */
+    background-color: var(--secondary-color); /* Bot√£o dourado */
     color: var(--primary-color); /* Texto azul escuro */
     padding: 0.9rem 1.8rem;
     text-decoration: none;
@@ -222,7 +222,7 @@ a:hover {
     font-weight: 600;
 }
 .visual-highlights ul li i {
-    color: var(--secondary-color); /* Õcone dourado */
+    color: var(--secondary-color); /* √çcone dourado */
     font-size: 1.2em;
 }
 
@@ -234,22 +234,22 @@ a:hover {
 .main-content-wrapper {
     display: flex;
     flex-wrap: wrap; /* Permite que as colunas se quebrem em linhas em telas menores */
-    gap: var(--spacing-lg); /* EspaÁo entre as colunas */
-    max-width: 1200px; /* Largura m·xima para o conte˙do principal */
+    gap: var(--spacing-lg); /* Espa√ßo entre as colunas */
+    max-width: 1200px; /* Largura m√°xima para o conte√∫do principal */
     margin: var(--spacing-xxl) auto; /* Margem superior/inferior para o container */
     padding: 0 var(--spacing-md); /* Padding nas laterais */
 }
 
 .main-column {
-    flex: 1; /* Permite que as colunas cresÁam e encolham igualmente */
-    min-width: 320px; /* Largura mÌnima para evitar que as colunas fiquem muito estreitas */
+    flex: 1; /* Permite que as colunas cres√ßam e encolham igualmente */
+    min-width: 320px; /* Largura m√≠nima para evitar que as colunas fiquem muito estreitas */
     background-color: var(--card-background);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-base);
     box-shadow: var(--shadow-base);
-    display: flex; /* Para organizar o conte˙do interno */
+    display: flex; /* Para organizar o conte√∫do interno */
     flex-direction: column;
-    justify-content: flex-start; /* Alinha o conte˙do ao topo */
+    justify-content: flex-start; /* Alinha o conte√∫do ao topo */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -286,10 +286,10 @@ a:hover {
     text-align: justify;
 }
 
-/* Bot„o dentro das colunas */
+/* Bot√£o dentro das colunas */
 .main-column .btn {
-    align-self: center; /* Centraliza o bot„o dentro da coluna */
-    margin-top: auto; /* Empurra o bot„o para baixo se o conte˙do for menor */
+    align-self: center; /* Centraliza o bot√£o dentro da coluna */
+    margin-top: auto; /* Empurra o bot√£o para baixo se o conte√∫do for menor */
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: 0.95rem;
@@ -331,29 +331,29 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   6. Estilos da SeÁ„o "Sobre Mim" original (adaptados e aninhados)
+   6. Estilos da Se√ß√£o "Sobre Mim" original (adaptados e aninhados)
    ----------------------------------------------------
 */
-.about-section { /* Esta classe È mantida para os cards internos */
-    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois j· est· no .main-content-wrapper */
-    background-color: transparent; /* Fundo transparente pois j· est· no .main-column */
-    max-width: none; /* Remove a largura m·xima, ser· controlada pelo .main-column */
+.about-section { /* Esta classe √© mantida para os cards internos */
+    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois j√° est√° no .main-content-wrapper */
+    background-color: transparent; /* Fundo transparente pois j√° est√° no .main-column */
+    max-width: none; /* Remove a largura m√°xima, ser√° controlada pelo .main-column */
     margin: 0;
 }
-.about-section h2 { /* Removido o estilo do h2 pois È controlado pelo .main-column h2 */
+.about-section h2 { /* Removido o estilo do h2 pois √© controlado pelo .main-column h2 */
     display: none; /* Esconde o H2 original se ele ainda existir, pois criamos um novo para a coluna */
 }
 
-.about-overview { /* Estilos j· ajustados no .main-column p */
-    display: none; /* Esconde o about-overview original, pois seu conte˙do foi movido */
+.about-overview { /* Estilos j√° ajustados no .main-column p */
+    display: none; /* Esconde o about-overview original, pois seu conte√∫do foi movido */
 }
 
 /* Removendo estilos de timeline */
 .academic-timeline, .specializations {
-    display: none; /* Esconde as seÁıes originais, pois foram unificadas */
+    display: none; /* Esconde as se√ß√µes originais, pois foram unificadas */
 }
 
-/* Novo estilo para a seÁ„o unificada de formaÁ„o e qualificaÁıes */
+/* Novo estilo para a se√ß√£o unificada de forma√ß√£o e qualifica√ß√µes */
 .combined-education-qualifications {
     background-color: var(--background-dark);
     padding: var(--spacing-md);
@@ -371,13 +371,13 @@ a:hover {
 }
 
 .clean-list {
-    list-style: none; /* Remove marcadores padr„o */
+    list-style: none; /* Remove marcadores padr√£o */
     padding-left: 0;
 }
 
 .clean-list li {
     position: relative;
-    padding-left: 20px; /* EspaÁo para o marcador customizado */
+    padding-left: 20px; /* Espa√ßo para o marcador customizado */
     margin-bottom: 8px;
     font-size: 1rem;
     color: var(--text-dark);
@@ -415,7 +415,7 @@ a:hover {
 }
 
 
-/* Tag Cloud de Habilidades TÈcnicas */
+/* Tag Cloud de Habilidades T√©cnicas */
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -502,7 +502,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   NOVOS ESTILOS PARA A SE«√O DE HABILIDADES
+   NOVOS ESTILOS PARA A SE√á√ÉO DE HABILIDADES
    ----------------------------------------------------
 */
 .skills-section {
@@ -510,7 +510,7 @@ a:hover {
     background-color: var(--background-dark); /* Fundo ligeiramente mais escuro */
     text-align: center;
     max-width: 1200px;
-    margin: var(--spacing-xxl) auto; /* Margens para centralizar e espaÁar */
+    margin: var(--spacing-xxl) auto; /* Margens para centralizar e espa√ßar */
     border-radius: var(--border-radius-base);
     box-shadow: var(--shadow-base);
 }
@@ -534,9 +534,9 @@ a:hover {
 
 .skills-grid {
     display: flex;
-    flex-wrap: wrap; /* Permite que as colunas quebrem para a prÛxima linha em telas menores */
+    flex-wrap: wrap; /* Permite que as colunas quebrem para a pr√≥xima linha em telas menores */
     justify-content: center; /* Centraliza as colunas */
-    gap: var(--spacing-lg); /* EspaÁo entre as colunas */
+    gap: var(--spacing-lg); /* Espa√ßo entre as colunas */
     margin-top: var(--spacing-lg);
 }
 
@@ -545,34 +545,34 @@ a:hover {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-base);
     padding: var(--spacing-lg) var(--spacing-md);
-    flex: 1; /* Permite que os itens cresÁam e ocupem o espaÁo disponÌvel */
-    min-width: 280px; /* Largura mÌnima para cada coluna antes de quebrar */
-    max-width: 350px; /* Largura m·xima para cada coluna */
+    flex: 1; /* Permite que os itens cres√ßam e ocupem o espa√ßo dispon√≠vel */
+    min-width: 280px; /* Largura m√≠nima para cada coluna antes de quebrar */
+    max-width: 350px; /* Largura m√°xima para cada coluna */
     box-shadow: var(--shadow-base);
-    text-align: left; /* Alinha o texto dentro de cada coluna ‡ esquerda */
+    text-align: left; /* Alinha o texto dentro de cada coluna √† esquerda */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex; /* Para organizar o conte˙do */
+    display: flex; /* Para organizar o conte√∫do */
     flex-direction: column;
 }
 
 .skill-category:hover {
-    transform: translateY(-5px); /* Efeito de elevaÁ„o ao passar o mouse */
+    transform: translateY(-5px); /* Efeito de eleva√ß√£o ao passar o mouse */
     box-shadow: var(--shadow-hover);
 }
 
 .skill-category .icon {
     font-size: 3em;
-    color: var(--secondary-color); /* Cor do Ìcone */
+    color: var(--secondary-color); /* Cor do √≠cone */
     margin-bottom: var(--spacing-md);
-    display: block; /* Garante que o Ìcone esteja em sua prÛpria linha */
-    text-align: center; /* Centraliza o Ìcone */
+    display: block; /* Garante que o √≠cone esteja em sua pr√≥pria linha */
+    text-align: center; /* Centraliza o √≠cone */
 }
 
 .skill-category h3 {
     font-size: 1.8em;
     color: var(--primary-color);
     margin-bottom: var(--spacing-md);
-    text-align: center; /* Centraliza o tÌtulo da categoria */
+    text-align: center; /* Centraliza o t√≠tulo da categoria */
     font-family: var(--font-heading);
 }
 
@@ -586,7 +586,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   7. Estilos da SeÁ„o ExperiÍncia Profissional
+   7. Estilos da Se√ß√£o Experi√™ncia Profissional
    ----------------------------------------------------
 */
 .experience-section {
@@ -606,7 +606,7 @@ a:hover {
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas para experiÍncia profissional */
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para experi√™ncia profissional */
     gap: var(--spacing-lg);
 }
 
@@ -639,7 +639,7 @@ a:hover {
 }
 
 .experience-card .card-header h3 {
-    font-family: var(--font-body); /* Usar Montserrat para subtÌtulos */
+    font-family: var(--font-body); /* Usar Montserrat para subt√≠tulos */
     font-size: 1.4rem;
     color: var(--primary-color);
     font-weight: 700;
@@ -695,7 +695,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   8. Estilos da SeÁ„o PortfÛlio
+   8. Estilos da Se√ß√£o Portf√≥lio
    ----------------------------------------------------
 */
 .portfolio-section {
@@ -748,7 +748,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   9. Estilos da SeÁ„o Contato
+   9. Estilos da Se√ß√£o Contato
    ----------------------------------------------------
 */
 .contact-section {
@@ -777,7 +777,7 @@ a:hover {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
-    display: inline-flex; /* Para alinhar o Ìcone com o texto */
+    display: inline-flex; /* Para alinhar o √≠cone com o texto */
     align-items: center;
     gap: 5px;
 }
@@ -788,7 +788,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   10. Estilos do RodapÈ (Footer)
+   10. Estilos do Rodap√© (Footer)
    ----------------------------------------------------
 */
 footer {
@@ -797,7 +797,7 @@ footer {
     background-color: var(--primary-color);
     color: white;
     font-size: 0.9em;
-    margin-top: var(--spacing-xxl); /* Garante espaÁo apÛs a ˙ltima seÁ„o */
+    margin-top: var(--spacing-xxl); /* Garante espa√ßo ap√≥s a √∫ltima se√ß√£o */
 }
 
 
@@ -822,7 +822,7 @@ footer {
     .experience-section,
     .portfolio-section,
     .contact-section,
-    .skills-section { /* Adicionado a nova seÁ„o de habilidades */
+    .skills-section { /* Adicionado a nova se√ß√£o de habilidades */
         margin: var(--spacing-xl) auto;
         padding: 0 var(--spacing-md);
     }
@@ -836,18 +836,18 @@ footer {
     .competency-card h3 {
         font-size: 1.2rem;
     }
-    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova se√ß√£o de habilidades */
         font-size: 2.2rem;
     }
     .experience-card .card-header h3 {
         font-size: 1.3rem;
     }
     .experience-grid {
-        grid-template-columns: repeat(2, 1fr); /* MantÈm 2 colunas para tablets */
+        grid-template-columns: repeat(2, 1fr); /* Mant√©m 2 colunas para tablets */
     }
 
     .skills-grid {
-        gap: var(--spacing-md); /* Reduz espaÁo entre colunas em tablets */
+        gap: var(--spacing-md); /* Reduz espa√ßo entre colunas em tablets */
     }
     .skill-category {
         padding: var(--spacing-md);
@@ -878,7 +878,7 @@ footer {
     }
     .intro-paragraph {
         font-size: 0.95rem;
-        text-align: left; /* Ou center, dependendo da preferÍncia */
+        text-align: left; /* Ou center, dependendo da prefer√™ncia */
     }
     .cta-buttons {
         flex-direction: column;
@@ -898,7 +898,7 @@ footer {
         padding: 0 var(--spacing-sm);
     }
     .main-column {
-        min-width: unset; /* Remove a largura mÌnima quando as colunas est„o empilhadas */
+        min-width: unset; /* Remove a largura m√≠nima quando as colunas est√£o empilhadas */
         padding: var(--spacing-md);
     }
     .main-column h2 {
@@ -930,15 +930,15 @@ footer {
         font-size: 0.6rem;
     }
 
-    .experience-section, .portfolio-section, .contact-section, .skills-section { /* Adicionado a nova seÁ„o de habilidades */
+    .experience-section, .portfolio-section, .contact-section, .skills-section { /* Adicionado a nova se√ß√£o de habilidades */
         padding: var(--spacing-lg) var(--spacing-sm);
         margin: var(--spacing-xl) auto;
     }
-    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova se√ß√£o de habilidades */
         font-size: 2rem;
     }
     .experience-grid {
-        grid-template-columns: 1fr; /* Cartıes de experiÍncia empilham em 1 coluna */
+        grid-template-columns: 1fr; /* Cart√µes de experi√™ncia empilham em 1 coluna */
     }
     .experience-card .card-header h3 {
         font-size: 1.2rem;
@@ -951,14 +951,14 @@ footer {
         margin-top: var(--spacing-xl);
     }
 
-    /* Regras especÌficas para a seÁ„o de habilidades em telas menores */
+    /* Regras espec√≠ficas para a se√ß√£o de habilidades em telas menores */
     .skills-grid {
         flex-direction: column; /* Empilha as colunas em telas menores */
         align-items: center; /* Centraliza as colunas empilhadas */
     }
     .skill-category {
         max-width: 90%; /* Ocupa mais largura em telas menores */
-        margin-bottom: var(--spacing-md); /* EspaÁamento entre as colunas empilhadas */
+        margin-bottom: var(--spacing-md); /* Espa√ßamento entre as colunas empilhadas */
     }
     .skill-category:last-child {
         margin-bottom: 0;
@@ -998,7 +998,7 @@ footer {
     .main-column h2 {
         font-size: 1.5em;
     }
-    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova seÁ„o de habilidades */
+    .experience-section h2, .portfolio-section h2, .contact-section h2, .skills-section h2 { /* Adicionado a nova se√ß√£o de habilidades */
         font-size: 1.8rem;
     }
     .experience-card .card-header .icon {
