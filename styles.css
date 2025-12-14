@@ -182,7 +182,7 @@
             line-height: 1.8;
             font-size: 1.1rem;
             max-width: 850px; /* Aumentado ligeiramente */
-            margin: 0 auto 50px auto;
+            margin: 0 auto 30px auto;
             color: #555;
             padding: 0 20px; /* Mantém padding interno */
         }
@@ -685,6 +685,7 @@
                 padding: 0.8rem 1rem;
             }
         }
+
 
 
 
