@@ -1,22 +1,22 @@
 /*
    ----------------------------------------------------
-   1. Reset BÃ¡sico e VariÃ¡veis CSS (Boas PrÃ¡ticas)
+   1. Reset Básico e Variáveis CSS (Boas Práticas)
    ----------------------------------------------------
 */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border nÃ£o aumentam a largura/altura */
+    box-sizing: border-box; /* Garante que padding e border não aumentam a largura/altura */
 }
 
 :root {
     /* Cores */
     --primary-color: #002D62; /* Azul escuro principal */
-    --secondary-color: #FFD700; /* Dourado para acentuaÃ§Ã£o */
+    --secondary-color: #FFD700; /* Dourado para acentuação */
     --background-light: #f4f4f4; /* Fundo claro e suave (do seu original) */
-    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seÃ§Ãµes */
+    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seções */
     --text-dark: #333; /* Texto principal escuro */
-    --text-light: #555; /* Texto secundÃ¡rio ou descriÃ§Ãµes */
+    --text-light: #555; /* Texto secundário ou descrições */
     --text-lighter: #666; /* Texto de detalhes */
     --border-color: #e0e0e0; /* Cor da borda suave */
     --card-background: #ffffff; /* Fundo dos cards/colunas */
@@ -25,7 +25,7 @@
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* EspaÃ§amento e Bordas */
+    /* Espaçamento e Bordas */
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
@@ -65,8 +65,8 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Container principal (nÃ£o usado da mesma forma que o template original,
-   a largura mÃ¡xima Ã© controlada por seÃ§Ãµes individuais para maior flexibilidade) */
+/* Container principal (não usado da mesma forma que o template original,
+   a largura máxima é controlada por seções individuais para maior flexibilidade) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,7 +75,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   3. Estilos da Barra de NavegaÃ§Ã£o (Navbar)
+   3. Estilos da Barra de Navegação (Navbar)
    ----------------------------------------------------
 */
 .navbar {
@@ -88,7 +88,7 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Adicionado para posicionar o link de idioma dentro do navbar */
+    /* Adicionado para posicionar os links de bandeira dentro do navbar */
     position: relative; 
 }
 
@@ -104,7 +104,7 @@ a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease;
-    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para Ã¡rea de clique */
+    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para área de clique */
 }
 
 .navbar ul li a:hover,
@@ -114,38 +114,42 @@ a:hover {
 
 /* 
    ----------------------------------------------------
-   Estilos ADICIONAIS para o link de idioma
+   Estilos ADICIONAIS para os links de bandeira
    ----------------------------------------------------
 */
-.navbar .language-switcher-link {
+.language-switcher-flags {
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
-    right: var(--spacing-lg); /* Alinha Ã  direita */
-    transform: translateY(-50%); /* Ajuste fino para centralizaÃ§Ã£o */
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    text-decoration: none; /* Garante que se pareÃ§a com um botÃ£o, nÃ£o um link padrÃ£o */
-    display: flex; /* Para centralizar o texto verticalmente, consistente com o estilo do botÃ£o */
+    right: var(--spacing-lg); /* Alinha à direita */
+    transform: translateY(-50%); /* Ajuste fino para centralização */
+    display: flex;
+    gap: 10px; /* Espaço entre as bandeiras */
     align-items: center;
-    justify-content: center;
 }
 
-.navbar .language-switcher-link:hover {
-    background-color: #e6c200; /* Dourado mais escuro */
-    transform: translateY(-50%) scale(1.05);
+.language-switcher-flags .flag-link {
+    display: block; /* Para que a imagem preencha o link */
+    line-height: 0; /* Remove espaço extra abaixo da imagem */
+    border-radius: 3px; /* Bordas levemente arredondadas */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.language-switcher-flags .flag-link:hover {
+    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
+
+.language-switcher-flags .flag-link img {
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    width: 20px; /* Largura definida para a imagem da bandeira */
+    height: auto; /* Mantém a proporção */
 }
 
 /*
    ----------------------------------------------------
-   4. Estilos da SeÃ§Ã£o Hero (Banner de Destaque)
+   4. Estilos da Seção Hero (Banner de Destaque)
    ----------------------------------------------------
 */
 .hero-section {
@@ -185,14 +189,14 @@ a:hover {
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: white; /* TÃ­tulo principal branco */
+    color: white; /* Título principal branco */
 }
 
 .hero-content h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--secondary-color); /* SubtÃ­tulo dourado */
+    color: var(--secondary-color); /* Subtítulo dourado */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -216,7 +220,7 @@ a:hover {
 }
 
 .cta-buttons .btn {
-    background-color: var(--secondary-color); /* BotÃ£o dourado */
+    background-color: var(--secondary-color); /* Botão dourado */
     color: var(--primary-color); /* Texto azul escuro */
     padding: 0.9rem 1.8rem;
     text-decoration: none;
@@ -245,4 +249,168 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem 2
+    gap: 1.5rem 2rem;
+    padding: 0;
+}
+.visual-highlights ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.visual-highlights ul li i {
+    color: var(--secondary-color); /* Ícone dourado */
+    font-size: 1.2em;
+}
+
+/*
+   ----------------------------------------------------
+   5. Layout de Duas Colunas Principal (main-content-wrapper)
+   ----------------------------------------------------
+*/
+.main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas se quebrem em linhas em telas menores */
+    gap: var(--spacing-lg); /* Espaço entre as colunas */
+    max-width: 1200px; /* Largura máxima para o conteúdo principal */
+    margin: var(--spacing-xxl) auto; /* Margem superior/inferior para o container */
+    padding: 0 var(--spacing-md); /* Padding nas laterais */
+}
+
+.main-column {
+    flex: 1; /* Permite que as colunas cresçam e encolham igualmente */
+    min-width: 320px; /* Largura mínima para evitar que as colunas fiquem muito estreitas */
+    background-color: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base);
+    display: flex; /* Para organizar o conteúdo interno */
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-column:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.main-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-column h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.main-column .column-intro {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.main-column p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+    text-align: justify;
+}
+
+/* Botão dentro das colunas */
+.main-column .btn {
+    align-self: center; /* Centraliza o botão dentro da coluna */
+    margin-top: auto; /* Empurra o botão para baixo se o conteúdo for menor */
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.main-column .primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.main-column .primary-btn:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o about-content-grid dentro da coluna direita */
+.main-column .about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Para empilhar no layout de coluna */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.main-column .about-content-grid h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+.main-column .about-content-grid h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+/*
+   ----------------------------------------------------
+   6. Estilos da Seção "Sobre Mim" original (adaptados e aninhados)
+   ----------------------------------------------------
+*/
+.about-section { /* Esta classe é mantida para os cards internos */
+    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois já está no .main-content-wrapper */
+    background-color: transparent; /* Fundo transparente pois já está no .main-column */
+    max-width: none; /* Remove a largura máxima, será controlada pelo .main-column */
+    margin: 0;
+}
+.about-section h2 { /* Removido o estilo do h2 pois é controlado pelo .main-column h2 */
+    display: none; /* Esconde o H2 original se ele ainda existir, pois criamos um novo para a coluna */
+}
+
+.about-overview { /* Estilos já ajustados no .main-column p */
+    display: none; /* Esconde o about-overview original, pois seu conteúdo foi movido */
+}
+
+/* Removendo estilos de timeline */
+.academic-timeline, .specializations {
+    display: none; /* Esconde as seções originais, pois foram unificadas */
+}
+
+/* Novo estilo para a seção unificada de formação e qualificações */
+.combined-education-qualifications {
+    background-color: var(--background-dark);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-md);
+}
+
+.combined-education-qualifications h3 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.clean-list {
+    list-style: none; /* Remove marcadores padrão */
+    padding-left: 0;
+}
+
+.clean-list li 
