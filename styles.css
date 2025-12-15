@@ -120,7 +120,7 @@ a:hover {
 .language-switcher-flags {
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
-    left: var(--spacing-lg); /* Alinha à direita */
+    left: var(--spacing-lg); /* Alinha à esquerda */
     transform: translateY(-50%); /* Ajuste fino para centralização */
     display: flex;
     gap: 10px; /* Espaço entre as bandeiras */
@@ -414,4 +414,5 @@ a:hover {
 }
 
 .clean-list li 
+
 
