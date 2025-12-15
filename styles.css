@@ -1,22 +1,22 @@
 /*
    ----------------------------------------------------
-   1. Reset B·sico e Vari·veis CSS (Boas Pr·ticas)
+   1. Reset B√°sico e Vari√°veis CSS (Boas Pr√°ticas)
    ----------------------------------------------------
 */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border n„o aumentam a largura/altura */
+    box-sizing: border-box; /* Garante que padding e border n√£o aumentam a largura/altura */
 }
 
 :root {
     /* Cores */
     --primary-color: #002D62; /* Azul escuro principal */
-    --secondary-color: #FFD700; /* Dourado para acentuaÁ„o */
+    --secondary-color: #FFD700; /* Dourado para acentua√ß√£o */
     --background-light: #f4f4f4; /* Fundo claro e suave (do seu original) */
-    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seÁıes */
+    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para se√ß√µes */
     --text-dark: #333; /* Texto principal escuro */
-    --text-light: #555; /* Texto secund·rio ou descriÁıes */
+    --text-light: #555; /* Texto secund√°rio ou descri√ß√µes */
     --text-lighter: #666; /* Texto de detalhes */
     --border-color: #e0e0e0; /* Cor da borda suave */
     --card-background: #ffffff; /* Fundo dos cards/colunas */
@@ -25,7 +25,7 @@
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* EspaÁamento e Bordas */
+    /* Espa√ßamento e Bordas */
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
@@ -65,8 +65,8 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Container principal (n„o usado da mesma forma que o template original,
-   a largura m·xima È controlada por seÁıes individuais para maior flexibilidade) */
+/* Container principal (n√£o usado da mesma forma que o template original,
+   a largura m√°xima √© controlada por se√ß√µes individuais para maior flexibilidade) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,7 +75,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   3. Estilos da Barra de NavegaÁ„o (Navbar)
+   3. Estilos da Barra de Navega√ß√£o (Navbar)
    ----------------------------------------------------
 */
 .navbar {
@@ -104,7 +104,7 @@ a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease;
-    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para ·rea de clique */
+    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para √°rea de clique */
 }
 
 .navbar ul li a:hover,
@@ -120,18 +120,18 @@ a:hover {
 .language-switcher-flags {
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
-    right: var(--spacing-lg); /* Alinha ‡ direita */
-    transform: translateY(-50%); /* Ajuste fino para centralizaÁ„o */
+    right: var(--spacing-lg); /* Alinha √† direita */
+    transform: translateY(-50%); /* Ajuste fino para centraliza√ß√£o */
     display: flex;
-    gap: 10px; /* EspaÁo entre as bandeiras */
+    gap: 10px; /* Espa√ßo entre as bandeiras */
     align-items: center;
 }
 
 .language-switcher-flags .flag-link {
     display: block; /* Para que a imagem preencha o link */
-    line-height: 0; /* Remove espaÁo extra abaixo da imagem */
+    line-height: 0; /* Remove espa√ßo extra abaixo da imagem */
     border-radius: 3px; /* Bordas levemente arredondadas */
-    overflow: hidden; /* Garante que a imagem n„o vaze */
+    overflow: hidden; /* Garante que a imagem n√£o vaze */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -142,14 +142,14 @@ a:hover {
 }
 
 .language-switcher-flags .flag-link img {
-    display: block; /* Remove o espaÁo extra abaixo da imagem */
+    display: block; /* Remove o espa√ßo extra abaixo da imagem */
     width: 20px; /* Largura definida para a imagem da bandeira */
-    height: auto; /* MantÈm a proporÁ„o */
+    height: auto; /* Mant√©m a propor√ß√£o */
 }
 
 /*
    ----------------------------------------------------
-   4. Estilos da SeÁ„o Hero (Banner de Destaque)
+   4. Estilos da Se√ß√£o Hero (Banner de Destaque)
    ----------------------------------------------------
 */
 .hero-section {
@@ -189,14 +189,14 @@ a:hover {
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: white; /* TÌtulo principal branco */
+    color: white; /* T√≠tulo principal branco */
 }
 
 .hero-content h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--secondary-color); /* SubtÌtulo dourado */
+    color: var(--secondary-color); /* Subt√≠tulo dourado */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -220,7 +220,7 @@ a:hover {
 }
 
 .cta-buttons .btn {
-    background-color: var(--secondary-color); /* Bot„o dourado */
+    background-color: var(--secondary-color); /* Bot√£o dourado */
     color: var(--primary-color); /* Texto azul escuro */
     padding: 0.9rem 1.8rem;
     text-decoration: none;
@@ -260,7 +260,7 @@ a:hover {
     font-weight: 600;
 }
 .visual-highlights ul li i {
-    color: var(--secondary-color); /* Õcone dourado */
+    color: var(--secondary-color); /* √çcone dourado */
     font-size: 1.2em;
 }
 
@@ -272,22 +272,22 @@ a:hover {
 .main-content-wrapper {
     display: flex;
     flex-wrap: wrap; /* Permite que as colunas se quebrem em linhas em telas menores */
-    gap: var(--spacing-lg); /* EspaÁo entre as colunas */
-    max-width: 1200px; /* Largura m·xima para o conte˙do principal */
+    gap: var(--spacing-lg); /* Espa√ßo entre as colunas */
+    max-width: 1200px; /* Largura m√°xima para o conte√∫do principal */
     margin: var(--spacing-xxl) auto; /* Margem superior/inferior para o container */
     padding: 0 var(--spacing-md); /* Padding nas laterais */
 }
 
 .main-column {
-    flex: 1; /* Permite que as colunas cresÁam e encolham igualmente */
-    min-width: 320px; /* Largura mÌnima para evitar que as colunas fiquem muito estreitas */
+    flex: 1; /* Permite que as colunas cres√ßam e encolham igualmente */
+    min-width: 320px; /* Largura m√≠nima para evitar que as colunas fiquem muito estreitas */
     background-color: var(--card-background);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-base);
     box-shadow: var(--shadow-base);
-    display: flex; /* Para organizar o conte˙do interno */
+    display: flex; /* Para organizar o conte√∫do interno */
     flex-direction: column;
-    justify-content: flex-start; /* Alinha o conte˙do ao topo */
+    justify-content: flex-start; /* Alinha o conte√∫do ao topo */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -324,10 +324,10 @@ a:hover {
     text-align: justify;
 }
 
-/* Bot„o dentro das colunas */
+/* Bot√£o dentro das colunas */
 .main-column .btn {
-    align-self: center; /* Centraliza o bot„o dentro da coluna */
-    margin-top: auto; /* Empurra o bot„o para baixo se o conte˙do for menor */
+    align-self: center; /* Centraliza o bot√£o dentro da coluna */
+    margin-top: auto; /* Empurra o bot√£o para baixo se o conte√∫do for menor */
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: 0.95rem;
@@ -369,29 +369,29 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   6. Estilos da SeÁ„o "Sobre Mim" original (adaptados e aninhados)
+   6. Estilos da Se√ß√£o "Sobre Mim" original (adaptados e aninhados)
    ----------------------------------------------------
 */
-.about-section { /* Esta classe È mantida para os cards internos */
-    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois j· est· no .main-content-wrapper */
-    background-color: transparent; /* Fundo transparente pois j· est· no .main-column */
-    max-width: none; /* Remove a largura m·xima, ser· controlada pelo .main-column */
+.about-section { /* Esta classe √© mantida para os cards internos */
+    padding: var(--spacing-lg) 0; /* Removido padding horizontal pois j√° est√° no .main-content-wrapper */
+    background-color: transparent; /* Fundo transparente pois j√° est√° no .main-column */
+    max-width: none; /* Remove a largura m√°xima, ser√° controlada pelo .main-column */
     margin: 0;
 }
-.about-section h2 { /* Removido o estilo do h2 pois È controlado pelo .main-column h2 */
+.about-section h2 { /* Removido o estilo do h2 pois √© controlado pelo .main-column h2 */
     display: none; /* Esconde o H2 original se ele ainda existir, pois criamos um novo para a coluna */
 }
 
-.about-overview { /* Estilos j· ajustados no .main-column p */
-    display: none; /* Esconde o about-overview original, pois seu conte˙do foi movido */
+.about-overview { /* Estilos j√° ajustados no .main-column p */
+    display: none; /* Esconde o about-overview original, pois seu conte√∫do foi movido */
 }
 
 /* Removendo estilos de timeline */
 .academic-timeline, .specializations {
-    display: none; /* Esconde as seÁıes originais, pois foram unificadas */
+    display: none; /* Esconde as se√ß√µes originais, pois foram unificadas */
 }
 
-/* Novo estilo para a seÁ„o unificada de formaÁ„o e qualificaÁıes */
+/* Novo estilo para a se√ß√£o unificada de forma√ß√£o e qualifica√ß√µes */
 .combined-education-qualifications {
     background-color: var(--background-dark);
     padding: var(--spacing-md);
@@ -409,7 +409,7 @@ a:hover {
 }
 
 .clean-list {
-    list-style: none; /* Remove marcadores padr„o */
+    list-style: none; /* Remove marcadores padr√£o */
     padding-left: 0;
 }
 
