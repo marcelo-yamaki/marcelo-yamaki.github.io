@@ -1,22 +1,22 @@
 /*
    ----------------------------------------------------
-   1. Reset B·sico e Vari·veis CSS (Boas Pr·ticas)
+   1. Reset B√°sico e Vari√°veis CSS (Boas Pr√°ticas)
    ----------------------------------------------------
 */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border n„o aumentam a largura/altura */
+    box-sizing: border-box; /* Garante que padding e border n√£o aumentam a largura/altura */
 }
 
 :root {
     /* Cores */
     --primary-color: #002D62; /* Azul escuro principal */
-    --secondary-color: #FFD700; /* Dourado para acentuaÁ„o */
+    --secondary-color: #FFD700; /* Dourado para acentua√ß√£o */
     --background-light: #f4f4f4; /* Fundo claro e suave (do seu original) */
-    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para seÁıes */
+    --background-dark: #f9f9f9; /* Fundo ligeiramente mais escuro para se√ß√µes */
     --text-dark: #333; /* Texto principal escuro */
-    --text-light: #555; /* Texto secund·rio ou descriÁıes */
+    --text-light: #555; /* Texto secund√°rio ou descri√ß√µes */
     --text-lighter: #666; /* Texto de detalhes */
     --border-color: #e0e0e0; /* Cor da borda suave */
     --card-background: #ffffff; /* Fundo dos cards/colunas */
@@ -25,7 +25,7 @@
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* EspaÁamento e Bordas */
+    /* Espa√ßamento e Bordas */
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
@@ -65,8 +65,8 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Container principal (n„o usado da mesma forma que o template original,
-   a largura m·xima È controlada por seÁıes individuais para maior flexibilidade) */
+/* Container principal (n√£o usado da mesma forma que o template original,
+   a largura m√°xima √© controlada por se√ß√µes individuais para maior flexibilidade) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,7 +75,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   3. Estilos da Barra de NavegaÁ„o (Navbar)
+   3. Estilos da Barra de Navega√ß√£o (Navbar)
    ----------------------------------------------------
 */
 .navbar {
@@ -104,7 +104,7 @@ a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease;
-    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para ·rea de clique */
+    padding: var(--spacing-sm) 0; /* Adiciona padding vertical para √°rea de clique */
 }
 
 .navbar ul li a:hover,
@@ -120,8 +120,8 @@ a:hover {
 .navbar .language-switcher-link {
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
-    right: var(--spacing-lg); /* Alinha ‡ direita */
-    transform: translateY(-50%); /* Ajuste fino para centralizaÁ„o */
+    right: var(--spacing-lg); /* Alinha √† direita */
+    transform: translateY(-50%); /* Ajuste fino para centraliza√ß√£o */
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
@@ -132,8 +132,8 @@ a:hover {
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    text-decoration: none; /* Garante que se pareÁa com um bot„o, n„o um link padr„o */
-    display: flex; /* Para centralizar o texto verticalmente, consistente com o estilo do bot„o */
+    text-decoration: none; /* Garante que se pare√ßa com um bot√£o, n√£o um link padr√£o */
+    display: flex; /* Para centralizar o texto verticalmente, consistente com o estilo do bot√£o */
     align-items: center;
     justify-content: center;
 }
@@ -145,7 +145,7 @@ a:hover {
 
 /*
    ----------------------------------------------------
-   4. Estilos da SeÁ„o Hero (Banner de Destaque)
+   4. Estilos da Se√ß√£o Hero (Banner de Destaque)
    ----------------------------------------------------
 */
 .hero-section {
@@ -185,14 +185,14 @@ a:hover {
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: white; /* TÌtulo principal branco */
+    color: white; /* T√≠tulo principal branco */
 }
 
 .hero-content h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--secondary-color); /* SubtÌtulo dourado */
+    color: var(--secondary-color); /* Subt√≠tulo dourado */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -216,7 +216,7 @@ a:hover {
 }
 
 .cta-buttons .btn {
-    background-color: var(--secondary-color); /* Bot„o dourado */
+    background-color: var(--secondary-color); /* Bot√£o dourado */
     color: var(--primary-color); /* Texto azul escuro */
     padding: 0.9rem 1.8rem;
     text-decoration: none;
